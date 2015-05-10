@@ -1,0 +1,16 @@
+{
+  "name": "some-like-it-neat",
+  "version": "1.0.1",
+  "homepage": "http://getmoxied.net",
+  "authors": [
+    "Moxie NYC - http://getmoxied.net <alexjvas@gmail.com>"
+  ],
+  "dependencies": {
+    "bourbon": "~4.2.1",
+    "neat": "~1.7.2",
+    "bi-app-sass": "latest"
+  },
+  "resolutions": {
+    "bourbon": "~4.2.1"
+  }
+}

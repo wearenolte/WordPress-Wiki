@@ -18,7 +18,7 @@ wp-content/*
 /wp-content/themes/*
 
 # wp-content/themes-modernspacesnyc
-!/wp-content/themes/caleres
+!/wp-content/themes/moxie-wiki
 
 # Deploy Script Submodule
 !.gitmodules
