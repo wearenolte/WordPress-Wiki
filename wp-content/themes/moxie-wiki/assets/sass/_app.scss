@@ -79,37 +79,39 @@ and Blueprint http://www.blueprintcss.org/
 	/*--------------------------------------------------------------
 	6.1 Layout and Structure
 	--------------------------------------------------------------*/
-	@import "layouts/header";
+	// @import "layouts/header";
 
 	/*--------------------------------------------------------------
 	6.2 Navigation
 	--------------------------------------------------------------*/
-	@import "components/flexnav";
-	@import "layouts/navigation";
+	// @import "components/flexnav";
+	// @import "layouts/navigation";
 
 	/*--------------------------------------------------------------
 	6.3 Content
 	--------------------------------------------------------------*/
-	@import "layouts/content";
+	// @import "layouts/content";
+
+	@import "module/aside"
 
 	/*--------------------------------------------------------------
 	6.4 Page Templates
 	--------------------------------------------------------------*/
-	@import "layouts/template-2col-l-sidebar";
-	@import "layouts/template-2col-r-sidebar";
-	@import "layouts/template-full-width";
+	// @import "layouts/template-2col-l-sidebar";
+	// @import "layouts/template-2col-r-sidebar";
+	// @import "layouts/template-full-width";
 
 	/*--------------------------------------------------------------
 	6.5 Sidebar
 	--------------------------------------------------------------*/
-	@import "layouts/sidebar";
+	// @import "layouts/sidebar";
 
 	/*--------------------------------------------------------------
 	6.6 Footer
 	--------------------------------------------------------------*/
-	@import "layouts/footer";
+	// @import "layouts/footer";
 
 	/*--------------------------------------------------------------
 	6.7 Accessbility
 	--------------------------------------------------------------*/
-	@import "layouts/accessibility";
+	// @import "layouts/accessibility";
