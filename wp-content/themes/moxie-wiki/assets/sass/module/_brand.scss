@@ -1,3 +1,10 @@
 .branding{
 	background-color: $primary-color;
+
+
+	h1{
+		color: $white;
+		margin: 0;
+		@include fontSize(20px);
+	}
 }

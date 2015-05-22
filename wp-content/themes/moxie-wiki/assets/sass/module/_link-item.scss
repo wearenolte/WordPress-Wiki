@@ -1,0 +1,49 @@
+.link{
+	.link-color{
+		height: 10px;
+		width: 100%;
+		display: block;
+	}
+
+	.link-thumb{
+		display: inline-block;
+		box-sizing: border-box;
+		margin-right: 5%;
+		border: 1px solid $gray;
+
+		width: 65px;
+		height: 65px;
+	}
+
+	.link-main{
+		display: inline-block;
+		vertical-align: top;
+		min-width: 180px
+	}
+
+	.link-title{
+		@include fontSize(16px);
+	}
+
+	.link-description{
+		margin-top: 5%;
+	}
+
+	.link-tags{
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		li{
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 2px 0 0;
+		}
+		a{
+			border-radius: 2px;
+			padding: 4px 6px;
+			background-color: $gray;
+		}
+	}
+}

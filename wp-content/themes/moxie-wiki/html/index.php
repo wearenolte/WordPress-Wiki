@@ -1,6 +1,6 @@
 <?php include './head/head.php' ?>
 
-<div class="row-parent">
+<div class="flex-child">
 	<?php include './aside/aside.php' ?>
 
 	<div class="column-parent">
@@ -9,8 +9,8 @@
 		<?php include './partial/list-links.php' ?>
 	</div>
 
-	<?php include './partial/footer.php' ?>
 </div>
+<?php include './partial/footer.php' ?>
 
 
-<?php include './foot/foot.php' ?>
+<?php include './footer/foot.php' ?>

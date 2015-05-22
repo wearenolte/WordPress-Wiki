@@ -22,47 +22,55 @@ html {
 	  unicode-bidi: embed;
 	}
 }
-#page {
-	 @include outer-container;
+// #page {
+// 	 @include outer-container;
 
-}
+// }
 .wrap {}
 
-#main {
-	padding: 0 50px;
-}
+// #main {
+// 	padding: 0 50px;
+// }
 
-#primary {
-	@include clearfix;
+// #primary {
+// 	@include clearfix;
 
-	@include media($sm) {
-		@include span-columns( 4 );
-	}
-	@include media($md) {
-		@include span-columns( 4 );
-		@include omega( block );
-	}
-	margin: 0 auto;
-	width: 100%;
+// 	@include media($sm) {
+// 		@include span-columns( 4 );
+// 	}
+// 	@include media($md) {
+// 		@include span-columns( 4 );
+// 		@include omega( block );
+// 	}
+// 	margin: 0 auto;
+// 	width: 100%;
 
-	ul {
-		list-style: none;
+// 	ul {
+// 		list-style: none;
 
-		li {
-			list-style-type: square;
-		}
-	}
-}
-#secondary {
-	@include media($sm) {
-		@include span-columns( 4 );
-		padding: 30px;
-	}
-	@include media($md) {
-		@include span-columns( 2 );
-		@include omega( block );
-	}
-	margin: 20px auto;
-	padding: 0 30px 0 0;
-	width: 100%;
+// 		li {
+// 			list-style-type: square;
+// 		}
+// 	}
+// }
+// #secondary {
+// 	@include media($sm) {
+// 		@include span-columns( 4 );
+// 		padding: 30px;
+// 	}
+// 	@include media($md) {
+// 		@include span-columns( 2 );
+// 		@include omega( block );
+// 	}
+// 	margin: 20px auto;
+// 	padding: 0 30px 0 0;
+// 	width: 100%;
+// }
+
+.flex-child{
+	display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox; /* TWEENER - IE 10 */
+	display: -webkit-flex;
+	display: flex;
 }

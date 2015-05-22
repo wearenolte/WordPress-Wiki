@@ -1,0 +1,16 @@
+.footer{
+	background-color: $secondary-color;
+	text-align: center;
+}
+
+.nav-footer{
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	li{
+		display: inline-block;
+	}
+}
