@@ -1,7 +1,7 @@
 <nav class="navbar">
-	<ul class="accordion">
-		<li>
-			<h3>Architecture</h3>
+	<ul class="accordion" data-behavior="accordion">
+		<li class="item-accordion">
+			<h3 class="js-accordion-trigger">Architecture</h3>
 			<ul class="sub">
 				<li><a href="">Cms</a></li>
 				<li><a href="">eCommerce</a></li>
@@ -10,8 +10,8 @@
 				<li><a href="">Preprocessors</a></li>
 			</ul>
 		</li>
-		<li>
-			<h3>Coding</h3>
+		<li class="item-accordion">
+			<h3 class="js-accordion-trigger">Coding</h3>
 			<ul class="sub">
 				<li><a href="">Cms</a></li>
 				<li><a href="">eCommerce</a></li>
@@ -20,8 +20,8 @@
 				<li><a href="">Preprocessors</a></li>
 			</ul>
 		</li>
-		<li>
-			<h3>Community</h3>
+		<li class="item-accordion">
+			<h3 class="js-accordion-trigger">Community</h3>
 			<ul class="sub">
 				<li><a href="">Cms</a></li>
 				<li><a href="">eCommerce</a></li>

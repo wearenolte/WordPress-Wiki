@@ -1,3 +1,40 @@
-nav{
+.navbar{
 	background-color: $secondary-color;
+
+	color: $white;
+
+	ul{
+		list-style: none;
+		padding-left: 0;
+		margin: 0;
+	}
+
+	h3{
+		cursor: pointer;
+		margin: 0;
+	}
+
+	h3,a{
+		@include fontSize(16px);
+		line-height: 2em;
+		padding: 0 1.5em;
+	}
+
+	a{
+		color: $white;
+	}
+}
+
+
+.accordion{
+	ul.sub {
+		display: none;
+	}
+
+	.is-expanded {
+		display: block;
+		> a {
+		  color: red;
+		}
+	}
 }
