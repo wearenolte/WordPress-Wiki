@@ -115,16 +115,22 @@ gulp.task('styles', function () {
 */
 
 gulp.task('js', function() {
-	return gulp.src([source+'js/app/**/*.js', source+'bower_components/**/*.js'])
-		.pipe(concat('development.js'))
-		.pipe(gulp.dest(source+'js'))
-		.pipe(rename( {
-			basename: "production",
-			suffix: '-min'
-		}))
-		.pipe(uglify())
-		.pipe(gulp.dest(source+'js/'))
-		.pipe(notify({ message: 'Scripts task complete', onLast: true }));
+	var directory = './';
+	return gulp.src([
+	  directory + 'assets/bower_components/jquery/dist/jquery.js',
+	  directory + 'assets/bower_components/modernizr/modernizr.js',
+	  directory + 'assets/bower_components/flexnav/js/jquery.flexnav.js',
+	  directory + 'assets/bower_components/essential.js/essential.js',
+	  directory + 'assets/js/app/*.js',
+	  directory + 'assets/js/app/frontend/*js',
+	  directory + 'assets/js/app/frontend/behaviors/base.js',
+	  directory + 'assets/js/app/frontend/behaviors/!(base).js'
+	]).pipe(concat('production.js'))
+	.pipe(gulp.dest(source+'js'))
+	.pipe(rename({ suffix: '-min' }))
+	.pipe(uglify())
+	.pipe(gulp.dest(directory + 'assets/js/'))
+	.pipe(notify({ message: 'Scripts task complete', onLast: true }));
 });
 
 /**
