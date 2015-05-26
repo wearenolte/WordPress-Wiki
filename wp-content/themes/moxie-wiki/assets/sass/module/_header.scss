@@ -91,9 +91,16 @@ a.popup{
 	overflow: hidden;
 	-webkit-transition: .3s all ease;
 	transition: .3s all ease;
+	margin: 0;
+
+	&.searchbox-open{
+		width: 300px;
+	}
+
 	input{
 		display: inline-block;
 		vertical-align: top;
+		border-radius: 0;
 	}
 
 

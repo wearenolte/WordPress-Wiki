@@ -4,11 +4,11 @@
 	</a> -->
 	<p class="link-count"><span class="link-icon icon-eye"></span>Browsing <span class="link-highlight">646</span> links</p>
 	<!-- <button class="mobile-nav modal-toggle hide-mobile-up" data-icon="c"></button> -->
-	<div class="search-container">
+	<div class="search-container" data-behavior="search-toggle">
 		<form class="searchbox" action="http://wwwhere.io/search/results">
 			<input type="text" name="q" placeholder="Search" class="searchbox-input" onkeyup="buttonUp()">
 			<input type="submit" class="searchbox-submit" value="Go">
-			<span class="searchbox-icon icon-search"></span>
+			<span class="searchbox-icon icon-search js-search-toggle"></span>
 		</form>
 	</div>
 	<div class="sharing">
