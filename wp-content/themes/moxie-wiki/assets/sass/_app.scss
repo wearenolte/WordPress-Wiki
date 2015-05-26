@@ -92,7 +92,19 @@ and Blueprint http://www.blueprintcss.org/
 	--------------------------------------------------------------*/
 	// @import "layouts/content";
 
-	@import "module/aside"
+	@import "module/aside";
+	@import "module/body";
+	@import "module/navbar";
+	@import "module/brand";
+	@import "module/footer";
+	@import "module/link-item";
+	@import "module/parent-column";
+	@import "module/header";
+	@import "module/modal";
+
+
+
+
 
 	/*--------------------------------------------------------------
 	6.4 Page Templates

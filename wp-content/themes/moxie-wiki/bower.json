@@ -8,7 +8,10 @@
   "dependencies": {
     "bourbon": "~4.2.1",
     "neat": "~1.7.2",
-    "bi-app-sass": "latest"
+    "bi-app-sass": "latest",
+    "essential.js": "~0.5.0",
+    "jquery": "~2.1.4",
+    "modernizr": "~2.8.3"
   },
   "resolutions": {
     "bourbon": "~4.2.1"

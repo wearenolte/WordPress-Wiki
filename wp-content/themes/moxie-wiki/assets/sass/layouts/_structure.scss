@@ -22,47 +22,89 @@ html {
 	  unicode-bidi: embed;
 	}
 }
-#page {
-	 @include outer-container;
+// #page {
+// 	 @include outer-container;
 
-}
+// }
 .wrap {}
 
-#main {
-	padding: 0 50px;
+// #main {
+// 	padding: 0 50px;
+// }
+
+// #primary {
+// 	@include clearfix;
+
+// 	@include media($sm) {
+// 		@include span-columns( 4 );
+// 	}
+// 	@include media($md) {
+// 		@include span-columns( 4 );
+// 		@include omega( block );
+// 	}
+// 	margin: 0 auto;
+// 	width: 100%;
+
+// 	ul {
+// 		list-style: none;
+
+// 		li {
+// 			list-style-type: square;
+// 		}
+// 	}
+// }
+// #secondary {
+// 	@include media($sm) {
+// 		@include span-columns( 4 );
+// 		padding: 30px;
+// 	}
+// 	@include media($md) {
+// 		@include span-columns( 2 );
+// 		@include omega( block );
+// 	}
+// 	margin: 20px auto;
+// 	padding: 0 30px 0 0;
+// 	width: 100%;
+// }
+
+.row-parent{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+
+	-webkit-align-content: stretch;
+	-ms-flex-line-pack: stretch;
+	align-content: stretch;
+	-webkit-box-align: stretch;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
 }
 
-#primary {
-	@include clearfix;
+.flex-child{
 
-	@include media($sm) {
-		@include span-columns( 4 );
-	}
-	@include media($md) {
-		@include span-columns( 4 );
-		@include omega( block );
-	}
-	margin: 0 auto;
-	width: 100%;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
 
-	ul {
-		list-style: none;
-
-		li {
-			list-style-type: square;
-		}
-	}
-}
-#secondary {
-	@include media($sm) {
-		@include span-columns( 4 );
-		padding: 30px;
-	}
-	@include media($md) {
-		@include span-columns( 2 );
-		@include omega( block );
-	}
-	margin: 20px auto;
-	padding: 0 30px 0 0;
-	width: 100%;
+	-webkit-align-self: auto;
+	-ms-flex-item-align: auto;
+	align-self: auto;
 }

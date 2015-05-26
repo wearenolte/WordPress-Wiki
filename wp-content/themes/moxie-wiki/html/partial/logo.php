@@ -1,8 +1,8 @@
 <section class="branding">
-	<a href="">
-		<figure>
+	<figure>
+		<a href="">
 			<img src="../images/logo.svg" alt="">
-		</figure>
-		<h1>Wiki Moxie</h1>
-	</a>
+		</a>
+	</figure>
+	<h1><a href="">Wiki Moxie</a></h1>
 </section>
