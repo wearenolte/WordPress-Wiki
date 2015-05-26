@@ -67,10 +67,44 @@ html {
 // 	width: 100%;
 // }
 
-.flex-child{
-	display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox; /* TWEENER - IE 10 */
+.row-parent{
+	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
+
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+
+	-webkit-align-content: stretch;
+	-ms-flex-line-pack: stretch;
+	align-content: stretch;
+	-webkit-box-align: stretch;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+}
+
+.flex-child{
+
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+
+	-webkit-align-self: auto;
+	-ms-flex-item-align: auto;
+	align-self: auto;
 }

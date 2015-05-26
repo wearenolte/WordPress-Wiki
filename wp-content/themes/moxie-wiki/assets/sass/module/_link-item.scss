@@ -1,8 +1,30 @@
+.list-links{
+	margin: rem(10);
+}
+
+.link-block{
+	float: left;
+	width: 49.5%;
+	margin-right: 1%;
+	margin-bottom: 1%;
+
+	&:nth-child(even){
+		margin-right: 0;
+	}
+}
+
 .link{
+	background: $white;
+	box-shadow: 0 1px 1px rgba($black,.075);
+
 	.link-color{
 		height: 10px;
 		width: 100%;
 		display: block;
+	}
+
+	.link-inner{
+		padding: 3%;
 	}
 
 	.link-thumb{
@@ -23,13 +45,24 @@
 
 	.link-title{
 		@include fontSize(16px);
+		margin-bottom: 2px;
+	}
+	.link-address{
+		@include fontSize(13px);
+		margin-bottom: 2px;
 	}
 
 	.link-description{
 		margin-top: 5%;
+		margin-bottom: 0px;
+		@include fontSize(12px);
+		line-height: 14px;
 	}
 
 	.link-tags{
+		.tag{
+			color: $light-gray;
+		}
 		ul{
 			list-style: none;
 			padding: 0;
@@ -37,13 +70,14 @@
 		}
 		li{
 			display: inline-block;
-			vertical-align: top;
+			vertical-align: middle;
 			margin: 0 2px 0 0;
 		}
 		a{
 			border-radius: 2px;
 			padding: 4px 6px;
 			background-color: $gray;
+			@include fontSize(11px);
 		}
 	}
 }

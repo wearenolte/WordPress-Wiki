@@ -1,6 +1,13 @@
 .footer{
 	background-color: $secondary-color;
 	text-align: center;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.foot-description{
+	color: $white;
+	@include fontSize(14px);
 }
 
 .nav-footer{
@@ -12,5 +19,21 @@
 
 	li{
 		display: inline-block;
+
+		&:nth-last-child(1){
+			a:after{
+				display: none;
+			}
+		}
+
+		a{
+			color: $white;
+
+			&:after{
+				content: "❘";
+				margin: 0 2px;
+				color: #404648;
+			}
+		}
 	}
 }

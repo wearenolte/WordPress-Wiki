@@ -1,5 +1,37 @@
 .header{
+	background-color: $secondary-color;
 
+}
+
+.link-count, .sharing, .search-container{
+	display: inline-block;
+}
+
+.link-count{
+	line-height: 55px;
+	margin-bottom: 0px;
+	margin-left: 2%;
+	color: $white;
+
+	.link-icon{
+		margin-right: 5px;
+	}
+}
+
+.link-highlight{
+	background: padding-box #ECEBDA;
+	color: #282C2D;
+	padding: 1px 3px;
+	border-radius: 3px;
+	text-transform: lowercase;
+	margin-left: 2px;
+}
+
+.sharing{
+	float: right;
+	width: 300px;
+
+	padding: 13px 13px 13px 0;
 }
 
 .social-sharing{
@@ -11,18 +43,113 @@
 		display: inline-block;
 		vertical-align: top;
 	}
+
+}
+
+a.popup{
+	background-color: $black;
+	color: $white;
+	height: 26px;
+	width: 68px;
+	text-transform: uppercase;
+	padding: 4px 12px 4px 13px;
+	height: 30px;
+
+	&:hover{
+		color: $white;
+	}
+}
+
+.share-twitter{
+	&:hover{
+		background-color: $twitter;
+	}
+}
+
+.share-facebook{
+	&:hover{
+		background-color: $facebook;
+	}
+}
+
+.search-container{
+	width: 160px;
+	position: relative;
+	float: right;
+	margin: 0 1em 0 0;
+	top: 7px;
+	z-index: 100;
 }
 
 .searchbox{
-	position: relative;
+	position: absolute;
+	min-width: 40px;
+	right: 0;
+	width: 0;
+	height: 40px;
+	display: block;
+	overflow: hidden;
+	-webkit-transition: .3s all ease;
+	transition: .3s all ease;
 	input{
 		display: inline-block;
 		vertical-align: top;
 	}
 
-	.searchbox-submit{
+
+	// .searchbox-submit{
+	// 	position: absolute;
+	// 	top: 0;
+	// 	right: 0;
+	// }
+}
+
+.searchbox-input{
+	top: 0;
+	right: 0;
+	border: 0;
+	outline: 0;
+	background: #34393b;
+	width: 100%;
+	height: 40px;
+	margin: 0;
+	padding: 0 45px 0 20px;
+	font-size: 1.6em;
+	color: #ECEBDA;
+}
+// input[type="submit"].searchbox-submit{
+// 	background-color: $primary-color;
+// 	border-color: $primary-color;
+// }
+
+
+.searchbox-icon{
+	&:before{
 		position: absolute;
 		top: 0;
-		right: 0;
+		left: 10px;
 	}
 }
+
+.searchbox-icon, input[type="submit"].searchbox-submit{
+	background-color: $primary-color;
+	border-color: $primary-color;
+	color: $white;
+	width: 40px;
+	height: 40px;
+	display: block;
+	position: absolute;
+	top: 0;
+	@include fontSize(20px);
+	right: 0;
+	padding: 4px 0 0;
+	margin: 0;
+	border: 0;
+	outline: 0;
+	line-height: 40px;
+	text-align: center;
+	cursor: pointer;
+	-webkit-transition: .2s all ease;
+	transition: .2s all ease;
+}
+
