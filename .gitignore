@@ -25,7 +25,7 @@ wp-content/*
 /wp-content/themes/*
 
 ### Except the theme Moxie Wiki
-!/wp-content/themes/Moxie Wiki
+!/wp-content/themes/moxie-wiki
 
 ## Other rules down here.
 
