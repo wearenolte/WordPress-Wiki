@@ -17,7 +17,7 @@ wp-content/*
 !/wp-content/themes/
 /wp-content/themes/*
 
-# wp-content/themes-modernspacesnyc
+### Except the theme Moxie Wiki
 !/wp-content/themes/moxie-wiki
 
 # Deploy Script Submodule
