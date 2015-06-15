@@ -1,4 +1,8 @@
 aside{
 	width: 280px;
 	background-color: $secondary-color;
+
+	@include media($mobile){
+		display: none;
+	}
 }
