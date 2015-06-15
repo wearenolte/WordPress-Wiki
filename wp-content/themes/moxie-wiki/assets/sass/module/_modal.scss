@@ -1,7 +1,11 @@
 .modal{
+	height: 0;
 	visibility: hidden;
+	-webkit-transition: all ease .3s;
+	transition: all ease .3s;
 
 	&.is-visible{
+		height: auto;
 		visibility: visible;
 	}
 }
@@ -26,6 +30,9 @@
 		visibility: visible;
 		opacity: 1;
 	}
+	.modal-wrapper {
+		margin-bottom: 20px;
+	}
 }
 
 .modal-wrapper {
@@ -43,6 +50,9 @@
 	-ms-transform: translateY(-20%);
 	transform: translateY(-20%);
 	opacity: 0;
+
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 
@@ -81,10 +91,19 @@
 .modal-body{
 	ul{
 		list-style: none;
+		@include clearfix();
 	}
 	li{
 		float: left;
 		width: 30%;
+
+		@include media($small-desktop){
+			width: 40%;
+		}
+
+		@include media($tablet){
+			width: 85%;
+		}
 
 		a{
 			@include fontSize(14px);

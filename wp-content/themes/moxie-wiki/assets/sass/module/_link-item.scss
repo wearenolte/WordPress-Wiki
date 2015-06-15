@@ -11,12 +11,12 @@
 
 	&:nth-child(even){
 		margin-right: 0;
-		@include media($tablet){
+		@include media($small-desktop){
 			margin-right: auto;
 		}
 	}
 
-	@include media($tablet){
+	@include media($small-desktop){
 		float: left;
 		width: 98%;
 		margin: 0 auto 5px auto;
