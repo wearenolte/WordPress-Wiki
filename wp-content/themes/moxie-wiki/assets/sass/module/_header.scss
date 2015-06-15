@@ -13,6 +13,10 @@
 	margin-left: 2%;
 	color: $white;
 
+	@include media($mobile){
+		display: none;
+	}
+
 	.link-icon{
 		margin-right: 5px;
 	}
@@ -32,6 +36,16 @@
 	width: 300px;
 
 	padding: 13px 13px 13px 0;
+
+	@include media($mobile){
+		width: 100%;
+		display: block;
+		float: none;
+		position: fixed;
+		bottom: 0;
+		z-index: 100;
+		padding: 0;
+	}
 }
 
 .social-sharing{
@@ -42,6 +56,11 @@
 	li{
 		display: inline-block;
 		vertical-align: top;
+
+		@include media($mobile){
+			float: left;
+			width: 50%;
+		}
 	}
 
 }
@@ -58,19 +77,71 @@ a.popup{
 	&:hover{
 		color: $white;
 	}
+
+	@include media($mobile){
+		height: 32px;
+		line-height: 32px;
+		width: 100%;
+		display: block;
+		text-align: center;
+	}
 }
 
-.share-twitter{
+.popup.share-twitter{
 	&:hover{
+		background-color: $twitter;
+	}
+
+	@include media($mobile){
 		background-color: $twitter;
 	}
 }
 
-.share-facebook{
+.popup.share-facebook{
 	&:hover{
 		background-color: $facebook;
 	}
+
+	@include media($mobile){
+		background-color: $facebook;
+	}
 }
+
+
+.logo-mobile{
+	display: none;
+	height: 50px;
+	width: 50px;
+	padding: 5px;
+	margin-left: 20px;
+
+	@include media($mobile){
+		display: inline-block;
+	}
+
+	img{
+		height: 100%;
+	}
+}
+
+.menu-mobile{
+	position: relative;
+	top: 7px;
+	right: 10px;
+	float: right;
+	text-align: center;
+
+	display: none;
+
+	@include media($mobile){
+		display: block;
+	}
+
+	span{
+		display: block;
+	}
+}
+
 
 .search-container{
 	width: 160px;
@@ -79,6 +150,10 @@ a.popup{
 	margin: 0 1em 0 0;
 	top: 7px;
 	z-index: 100;
+
+	@include media($mobile){
+		right: 50px;
+	}
 }
 
 .searchbox{

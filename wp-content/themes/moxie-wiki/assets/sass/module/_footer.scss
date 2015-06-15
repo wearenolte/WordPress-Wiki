@@ -3,6 +3,10 @@
 	text-align: center;
 	padding-top: 25px;
 	padding-bottom: 25px;
+
+	@include media($mobile){
+		padding-bottom: 50px;
+	}
 }
 
 .foot-description{

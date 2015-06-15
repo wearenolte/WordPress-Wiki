@@ -11,4 +11,8 @@ html, body{
 body{
 	border-top: 5px solid $primary-color;
 	background-color: $bg-color;
+
+	@include media($mobile){
+		border-top: 0px;
+	}
 }
