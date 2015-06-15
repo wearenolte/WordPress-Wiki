@@ -1,5 +1,6 @@
 .list-links{
 	margin: rem(10);
+	@include clearfix();
 }
 
 .link-block{
@@ -10,6 +11,15 @@
 
 	&:nth-child(even){
 		margin-right: 0;
+		@include media($tablet){
+			margin-right: auto;
+		}
+	}
+
+	@include media($tablet){
+		float: left;
+		width: 98%;
+		margin: 0 auto 5px auto;
 	}
 }
 
@@ -22,7 +32,15 @@
 		.link-link{
 			opacity: 1;
 			top: 20px;
+
+			@include media($mobile){
+				top: 10px;
+			}
 		}
+	}
+
+	@include media($mobile){
+		height: 60px;
 	}
 
 	.link-link{
@@ -38,6 +56,15 @@
 		span{
 			@include fontSize(40px);
 			color: $white;
+
+			@include media($mobile){
+				@include fontSize(20px);
+			}
+		}
+
+		@include media($mobile){
+			top: 10px;
+			opacity: 1;
 		}
 	}
 
@@ -45,10 +72,19 @@
 		height: 10px;
 		width: 100%;
 		display: block;
+
+		@include media($mobile){
+			height: 100%;
+			width: 10px;
+			float: left;
+		}
 	}
 
 	.link-inner{
 		padding: 3%;
+		@include media($mobile){
+			padding: 5px;
+		}
 	}
 
 	.link-thumb{
@@ -59,12 +95,23 @@
 
 		width: 65px;
 		height: 65px;
+
+		@include media($mobile){
+			height: 50px;
+			width: 50px;
+			float: left;
+			margin: 0 1em;
+		}
 	}
 
 	.link-main{
 		display: inline-block;
 		vertical-align: top;
-		min-width: 180px
+		min-width: 180px;
+
+		@include media($mobile){
+			min-width: auto;
+		}
 	}
 
 	.link-title{
@@ -74,6 +121,10 @@
 	.link-address{
 		@include fontSize(13px);
 		margin-bottom: 2px;
+
+		@include media($mobile){
+			display: none;
+		}
 	}
 
 	.link-description{
@@ -81,6 +132,10 @@
 		margin-bottom: 0px;
 		@include fontSize(12px);
 		line-height: 14px;
+
+		@include media($mobile){
+			display: none;
+		}
 	}
 
 	.link-tags{
@@ -96,6 +151,12 @@
 			display: inline-block;
 			vertical-align: middle;
 			margin: 0 2px 0 0;
+
+			&:nth-child(1){
+				@include media($mobile){
+					display: none;
+				}
+			}
 		}
 		a{
 			border-radius: 2px;
