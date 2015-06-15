@@ -1,7 +1,7 @@
 <section class="list-links flex-child">
 	<div class="link-block">
 		<div class="link">
-			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span data-icon="o"></span></a></div>
+			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span class="link-link"></span></a></div>
 			<div class="link-color" style="background:#F08484"></div>
 			<div class="link-inner">
 				<div class="link-top">
@@ -29,7 +29,7 @@
 
 	<div class="link-block">
 		<div class="link">
-			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span data-icon="o"></span></a></div>
+			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span class="link-link"></span></a></div>
 			<div class="link-color" style="background:#F08484"></div>
 			<div class="link-inner">
 				<div class="link-top">
@@ -57,7 +57,7 @@
 
 	<div class="link-block">
 		<div class="link">
-			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span data-icon="o"></span></a></div>
+			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span class="link-link"></span></a></div>
 			<div class="link-color" style="background:#F08484"></div>
 			<div class="link-inner">
 				<div class="link-top">
@@ -85,7 +85,7 @@
 
 	<div class="link-block">
 		<div class="link">
-			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span data-icon="o"></span></a></div>
+			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span class="link-link"></span></a></div>
 			<div class="link-color" style="background:#F08484"></div>
 			<div class="link-inner">
 				<div class="link-top">
@@ -113,7 +113,7 @@
 
 	<div class="link-block">
 		<div class="link">
-			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span data-icon="o"></span></a></div>
+			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span class="link-link"></span></a></div>
 			<div class="link-color" style="background:#F08484"></div>
 			<div class="link-inner">
 				<div class="link-top">
@@ -141,7 +141,7 @@
 
 	<div class="link-block">
 		<div class="link">
-			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span data-icon="o"></span></a></div>
+			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span class="link-link"></span></a></div>
 			<div class="link-color" style="background:#F08484"></div>
 			<div class="link-inner">
 				<div class="link-top">
@@ -169,7 +169,7 @@
 
 	<div class="link-block">
 		<div class="link">
-			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span data-icon="o"></span></a></div>
+			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span class="link-link"></span></a></div>
 			<div class="link-color" style="background:#F08484"></div>
 			<div class="link-inner">
 				<div class="link-top">
@@ -197,7 +197,7 @@
 
 	<div class="link-block">
 		<div class="link">
-			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span data-icon="o"></span></a></div>
+			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span class="link-link"></span></a></div>
 			<div class="link-color" style="background:#F08484"></div>
 			<div class="link-inner">
 				<div class="link-top">
@@ -225,7 +225,7 @@
 
 	<div class="link-block">
 		<div class="link">
-			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span data-icon="o"></span></a></div>
+			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span class="link-link"></span></a></div>
 			<div class="link-color" style="background:#F08484"></div>
 			<div class="link-inner">
 				<div class="link-top">
@@ -253,7 +253,7 @@
 
 	<div class="link-block">
 		<div class="link">
-			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span data-icon="o"></span></a></div>
+			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span class="link-link"></span></a></div>
 			<div class="link-color" style="background:#F08484"></div>
 			<div class="link-inner">
 				<div class="link-top">
@@ -281,7 +281,7 @@
 
 	<div class="link-block">
 		<div class="link">
-			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span data-icon="o"></span></a></div>
+			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span class="link-link"></span></a></div>
 			<div class="link-color" style="background:#F08484"></div>
 			<div class="link-inner">
 				<div class="link-top">
@@ -309,7 +309,7 @@
 
 	<div class="link-block">
 		<div class="link">
-			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span data-icon="o"></span></a></div>
+			<div class="link-link"><a href="http://usabilitytools.com/" target="_blank"><span class="link-link"></span></a></div>
 			<div class="link-color" style="background:#F08484"></div>
 			<div class="link-inner">
 				<div class="link-top">
