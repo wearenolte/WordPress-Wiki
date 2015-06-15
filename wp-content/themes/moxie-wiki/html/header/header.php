@@ -1,9 +1,8 @@
 <header class="header flex-child">
-<!-- 	<a href="http://getmoxie.net/" class="hide-mobile-up">
+	<a href="http://getmoxie.net/" class="logo-mobile">
 		<img src="../images/logo.svg" alt="">
-	</a> -->
+	</a>
 	<p class="link-count"><span class="link-icon icon-eye"></span>Browsing <span class="link-highlight">646</span> links</p>
-	<!-- <button class="mobile-nav modal-toggle hide-mobile-up" data-icon="c"></button> -->
 	<div class="search-container" data-behavior="search-toggle">
 		<form class="searchbox" action="http://wwwhere.io/search/results">
 			<input type="text" name="q" placeholder="Search" class="searchbox-input" onkeyup="buttonUp()">
@@ -11,6 +10,7 @@
 			<span class="searchbox-icon icon-search js-search-toggle"></span>
 		</form>
 	</div>
+	<div class="menu-mobile button-default" data-behavior="modal-open"><span class="js-open-modal">M</span></div>
 	<div class="sharing">
 		<ul class="social-sharing">
 			<li><a href="" class="popup share-twitter"><span class="share-icon icon-twitter"></span> <span class="share-text">tweet</span></a></li>
