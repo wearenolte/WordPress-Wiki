@@ -58,10 +58,7 @@ if ( ! function_exists( 'moxie_wiki_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menu( 'primary-navigation', __( 'Primary Menu', 'some-like-it-neat' ) );
 
-		// Enable support for Post Formats.
-		if ( 'yes' === get_theme_mod( 'some-like-it-neat_post_format_support' ) ) {
-			add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'status', 'gallery', 'chat', 'audio' ) );
-		}
+        add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'status', 'gallery', 'chat', 'audio' ) );
 
 		// Enable Support for Jetpack Infinite Scroll
 		if ( 'yes' === get_theme_mod( 'some-like-it-neat_infinite_scroll_support' ) ) {
