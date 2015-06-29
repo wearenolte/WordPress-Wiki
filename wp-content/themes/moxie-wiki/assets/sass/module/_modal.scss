@@ -97,6 +97,10 @@
 		float: left;
 		width: 30%;
 
+		@media screen and (max-width: 1080px){
+			width: 40%;
+		}
+
 		@include media($small-desktop){
 			width: 40%;
 		}
