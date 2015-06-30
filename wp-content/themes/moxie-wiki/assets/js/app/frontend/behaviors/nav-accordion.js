@@ -5,7 +5,7 @@
 Wiki.Behaviors.Accordion = Wiki.Behaviors.Base.extend({
 
 	events: {
-		"click .js-accordion-trigger": "toggleAccordion",
+		'click .js-accordion-trigger': 'toggleAccordion',
 	},
 
 	toggleAccordion: function(e){

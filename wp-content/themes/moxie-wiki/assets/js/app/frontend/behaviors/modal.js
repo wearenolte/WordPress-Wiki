@@ -1,11 +1,12 @@
 // -------------------------------------------
 //   Modal
 // -------------------------------------------
+'use strict';
 
 Wiki.Behaviors.ModalOpen = Wiki.Behaviors.Base.extend({
 
 	events: {
-		"click .js-open-modal": "openModal",
+		'click .js-open-modal': 'openModal',
 	},
 
 	openModal: function(){
@@ -16,7 +17,7 @@ Wiki.Behaviors.ModalOpen = Wiki.Behaviors.Base.extend({
 Wiki.Behaviors.ModalClose = Wiki.Behaviors.Base.extend({
 
 	events: {
-		"click .js-close-modal": "closeModal",
+		'click .js-close-modal': 'closeModal',
 	},
 
 	closeModal: function(){
