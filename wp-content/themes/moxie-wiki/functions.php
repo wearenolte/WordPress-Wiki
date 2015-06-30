@@ -353,48 +353,50 @@ function moxie_wiki_add_selectivizr()
 <?php
 }
 
-function custom_post_link(){
-	if ( ! class_exists( 'Super_Custom_Post_Type' ) )
-		return;
 
-	$custom_posts = new Super_Custom_Post_Type( 'link' );
+// include( 'custom-post-types/link.php' );
+// $links = new Link();
 
-	# Test Icon. Should be a square grid.
-	$custom_posts->set_icon( 'link' );
+// include( 'meta-fields/link-fields.php' );
 
-	# Taxonomy test, should be like tags
-	#$tax_tags = new Super_Custom_Taxonomy( 'tax-tag' );
 
-	# Taxonomy test, should be like categories
-	$tax_cats = new Super_Custom_Taxonomy( 'tax-cat', 'category', 'Category', 'category' );
+//Add svg support
+add_filter('upload_mimes', 'my_upload_mimes');
 
-	# Connect both of the above taxonomies with the post type
-	connect_types_and_taxes( $custom_posts, $tax_cats );
-
-	# Add a meta box with every field type
-	$custom_posts->add_meta_box( array(
-		'id'      => 'details-link',
-		'context' => 'normal',
-		'fields'  => array(
-			'url-link'        => array(),
-			'description-link'       => array( 'type' => 'textarea' ),
-		)
-	) );
+function my_upload_mimes($mimes = array()) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
 }
 
-add_action( 'after_setup_theme', 'custom_post_link' );
-
-#Remove Wysiwyg and Excerpt
-add_action('init', 'init_remove_support',100);
-function init_remove_support(){
-    $post_type = 'link';
-    remove_post_type_support( $post_type, 'editor');
-    remove_post_type_support( $post_type, 'excerpt');
-
+function fix_svg() {
+   echo '<style type="text/css">
+         .attachment-266x266, .thumbnail img {
+              width: 100% !important;
+              height: auto !important;
+         }
+         </style>';
 }
+add_action('admin_head', 'fix_svg');
 
-function My_color_script(){
-    wp_enqueue_script('iris');
+
+//Add Field for logo
+function themeslug_theme_customizer( $wp_customize ) {
+    // Fun code will go here
+    $wp_customize->add_section( 'themeslug_logo_section' , array(
+        'title'       => __( 'Logo', 'themeslug' ),
+        'priority'    => 30,
+        'description' => 'Upload a logo to replace the default site name and description in the header',
+    ) );
+
+    $wp_customize->add_setting( 'themeslug_logo' );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
+        'label'    => __( 'Logo', 'themeslug' ),
+        'section'  => 'themeslug_logo_section',
+        'settings' => 'themeslug_logo',
+    ) ) );
 }
-add_action('admin_enqueue_scripts','My_color_script');
+add_action( 'customize_register', 'themeslug_theme_customizer' );
+
+
 
