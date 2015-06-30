@@ -38,9 +38,13 @@
 	<aside>
 		<section class="branding">
 			<figure>
-				<a href="">
-					<img src="../images/logo.svg" alt="">
-				</a>
+				<?php if ( get_theme_mod( 'themeslug_logo' ) ) : ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
+						<img src='<?php echo esc_url( get_theme_mod( 'themeslug_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+					</a>
+				<?php else : ?>
+				<?php endif; ?>
+
 			</figure>
 			<h1><a href="<?php echo site_url(); ?>"><?php bloginfo(); ?></a></h1>
 		</section>
@@ -204,9 +208,13 @@
 
 		<!-- Header -->
 		<header class="header flex-child">
-			<a href="http://getmoxie.net/" class="logo-mobile">
-				<img src="../images/logo.svg" alt="">
-			</a>
+			<?php if ( get_theme_mod( 'themeslug_logo' ) ) : ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home' class="logo-mobile">
+					<img src='<?php echo esc_url( get_theme_mod( 'themeslug_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+				</a>
+			<?php else : ?>
+				<a href="<?php echo site_url(); ?>"><?php bloginfo(); ?></a>
+			<?php endif; ?>
 			<p class="link-count"><span class="link-icon icon-eye"></span>Browsing <span class="link-highlight">646</span> links</p>
 			<div class="search-container" data-behavior="search-toggle">
 				<form class="searchbox" action="http://wwwhere.io/search/results">
