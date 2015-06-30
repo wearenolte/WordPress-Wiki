@@ -1,4 +1,8 @@
 {
+  "predef": [
+    "Essential",
+    "Wiki"
+  ],
   "node": true,
   "browser": true,
   "esnext": true,
