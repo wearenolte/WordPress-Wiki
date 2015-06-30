@@ -23,6 +23,10 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-menu:before {
+	content: "\e60a";
+}
+
 .icon-eye:before {
 	content: "\e600";
 }

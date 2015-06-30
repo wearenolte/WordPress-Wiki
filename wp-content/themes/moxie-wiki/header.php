@@ -215,7 +215,7 @@
 					<span class="searchbox-icon icon-search js-search-toggle"></span>
 				</form>
 			</div>
-			<div class="menu-mobile button-default" data-behavior="modal-open"><span class="js-open-modal">M</span></div>
+			<div class="menu-mobile button-default" data-behavior="modal-open"><span class="js-open-modal icon-menu"></span></div>
 			<div class="sharing">
 				<ul class="social-sharing">
 					<li><a href="" class="popup share-twitter"><span class="share-icon icon-twitter"></span> <span class="share-text">tweet</span></a></li>

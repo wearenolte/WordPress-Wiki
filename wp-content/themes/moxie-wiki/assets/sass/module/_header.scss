@@ -139,6 +139,8 @@ a.popup{
 
 	span{
 		display: block;
+		@include fontSize(24px);
+		line-height: 40px;
 	}
 }
 
