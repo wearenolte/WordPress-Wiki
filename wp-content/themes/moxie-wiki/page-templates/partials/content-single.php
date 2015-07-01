@@ -3,11 +3,24 @@
  * @package moxie_wiki
  */
 ?>
+<?php
+	$args = array( 'post_type' => 'link', 'posts_per_page' => 10 );
+	$loop = new WP_Query( $args );
+	while ( $loop->have_posts() ) : $loop->the_post();
+	  the_title();
+	  echo '<div class="entry-content">';
+	  get_field('url');
+	  get_field('description-link');
+	  echo '</div>';
+	endwhile;
+?>
+
 <?php tha_entry_before(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemType="http://schema.org/BlogPosting">
 	<?php tha_entry_top(); ?>
 	<header class="entry-header">
 		<h1 class="entry-title" itemprop="name" ><?php the_title(); ?></h1>
+		<h2><?php  ?></h2>
 
 		<div class="entry-meta">
 
