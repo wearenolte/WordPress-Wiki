@@ -18,7 +18,7 @@ wp-content/*
 /wp-content/themes/*
 
 ### Except the theme Moxie Wiki
-!/wp-content/themes/moxie-wiki
+!moxie-wiki
 
 # Deploy Script Submodule
 !.gitmodules
