@@ -27,6 +27,7 @@
 	background: $white;
 	box-shadow: 0 1px 1px rgba($black,.075);
 	position: relative;
+	height: 165px;
 
 	&:hover{
 		.link-link{
@@ -87,7 +88,7 @@
 		}
 	}
 
-	.link-thumb{
+	.link-thumb, img{
 		display: inline-block;
 		box-sizing: border-box;
 		margin-right: 5%;

@@ -10,26 +10,33 @@
 		<?php tha_content_bottom(); ?>
 		</main><!-- #main -->
 		<?php tha_content_after(); ?>
-			<?php tha_footer_before(); ?>
-		<footer id="colophon" class="site-footer wrap" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<?php tha_footer_before(); ?>
 		<?php tha_footer_top(); ?>
-			<div class="site-info">
-				<?php do_action( 'moxie_wiki_credits' ); ?>
-				<?php if ( 'no' === get_theme_mod( 'some-like-it-neat_hide_WordPress_credits' ) ) : ?>
-					<a class="wordpress" href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s WordPress', 'some-like-it-neat' ), '<span class="genericon genericon-wordpress"></span>' ); ?></a>
-					<span class="sep"> | </span>
-				<?php endif; ?>
-
-				<?php echo esc_attr( get_theme_mod( 'moxie_wiki_footer_colophon', __( 'Moxie Wiki, by Moxie NYC - http://getmoxied.net', 'some-like-it-neat' ) ) );  ?><br />
-
-			</div><!-- .site-info -->
-		<?php tha_footer_bottom(); ?>
-		</footer><!-- #colophon -->
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="wrap">
+				<div class="foot-description">
+					Wiki is a curated list of tools and resources for people who make websites.
+				</div>
+				<nav class="nav-footer">
+					<ul>
+						<li><a href="">About</a></li>
+						<li><a href="">Facebook</a></li>
+						<li><a href="">Twitter</a></li>
+						<li><a href="">Tos</a></li>
+						<li><a href="">Buy a beer</a></li>
+					</ul>
+				</nav>
+			</div>
+		</footer>
+		<!-- <?php tha_footer_bottom(); ?> -->
 		<?php tha_footer_after(); ?>
 	</div><!-- .wrap -->
 </div><!-- #page -->
 
 <?php tha_body_bottom(); ?>
 <?php wp_footer(); ?>
+
+
 </body>
 </html>
