@@ -1,6 +1,6 @@
 <?php
 
-	function add_meta_box( $post_type ) {
+	function add_meta_box_2( $post_type ) {
 		$post_types = array('post', 'link');     //limit meta box to certain post types
         if ( in_array( $post_type, $post_types )) {
 			add_meta_box(
@@ -14,4 +14,4 @@
         }
 	}
 
-	add_action('add_meta_box','add_meta_box');
+	add_action('add_meta_box','add_meta_box_2');
