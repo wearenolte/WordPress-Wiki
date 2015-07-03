@@ -12,50 +12,28 @@
 
 get_header(); ?>
 
+<?php use \glue\View; ?>
+
 		<section class="list-links flex-child">
-		<?php global $wp_query;
-		$wp_query = new WP_Query("post_type=link&post_status=publish");
-		while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
-			<?php $postid = $wp_query->post->ID; ?>
+			<?php global $wp_query;
+			$wp_query = new WP_Query("post_type=link&post_status=publish");
+			while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+				<?php $postid = $wp_query->post->ID; ?>
+				<?php
+					$post_thumbnail_id = get_post_thumbnail_id( $postid );
+					$image = wp_get_attachment_image_src( $post_thumbnail_id, array(200,200));
+				 ?>
 
-			<div class="link-block">
-				<div class="link">
-					<div class="link-link"><a href="<?php the_permalink() ?>" target="_blank"><span class="icon-link-external"></span></a></div>
-					<div class="link-color" style="background:#F08484"></div>
-					<div class="link-inner">
-						<div class="link-top">
-							<a href="<?php the_permalink() ?>" target="_blank">
-								<?php the_post_thumbnail( array(200,200) ); ?>
-							</a>
-							<div class="link-main">
-								<a href="<?php the_permalink() ?>" target="_blank">
-									<h2 class="link-title"><?php the_title(); ?></h2>
-								</a>
-								<a href="<?php the_permalink() ?>" target="_blank">
-									<h6 class="link-address"><?php the_permalink() ?></h6>
-								</a>
-								<div class="link-tags">
-									<ul>
-										<li><span class="tag icon-tag"></span></li>
-										<li><a href="#">behavior</a></li>
-										<li><a href="#">user research</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<p class="link-description"><?php echo get_post_meta( $postid, 'description-link', true); ?></p>
-					</div>
-				</div>
-			</div>
-	<!--
-		    <li>
-		    	<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
-		    	<a href="<?php echo get_post_meta( $postid, 'url-link', true); ?>"><?php echo get_post_meta( $postid, 'url-link', true); ?></a>
-		    	<p><?php echo get_post_meta( $postid, 'description-link', true); ?></p>
-				<?php the_post_thumbnail( array(200,200) ); ?>
-		    </li> -->
+				<?php
+				View::make('link/single-link')
+				  ->with('link', get_post_meta( $postid, 'url-link', true))
+				  ->with('title', get_the_title())
+				  ->with('image', $image)
+				  ->with('description', get_post_meta( $postid, 'description-link', true))
+				  ->render();
+				?>
 
-		<?php endwhile; ?>
+			<?php endwhile; ?>
 		</section>
 
 		<div class="modal">
