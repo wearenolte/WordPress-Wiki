@@ -15,9 +15,34 @@
 		<?php tha_footer_top(); ?>
 
 		<?php
+			$nav_footer = array(
+					array(
+						'title' => 'About',
+						'link' => '#'
+					),
+					array(
+						'title' => 'Facebook',
+						'link' => 'http://www.facebook.com'
+					),
+					array(
+						'title' => 'Twitter',
+						'link' => 'http://www.twitter.com'
+					),
+					array(
+						'title' => 'Tos',
+						'link' => '#'
+					),
+					array(
+						'title' => 'Buy a Beer',
+						'link' => '#'
+					),
+				);
+		?>
+
+		<?php
 		View::make('shared/footer')
 		  ->with('foot_description', 'Wiki is a curated list of tools and resources for people who make websites.')
-		  ->with('address', '3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890')
+		  ->with('nav_footer', $nav_footer)
 		  ->render();
 		?>
 		<!-- <?php tha_footer_bottom(); ?> -->
