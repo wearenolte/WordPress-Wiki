@@ -152,7 +152,7 @@ if ( ! function_exists( 'moxie_wiki_scripts' ) ) :
 			wp_enqueue_script( 'hoverintent-js', get_template_directory_uri() . '/assets/js/vendor/hoverintent/jquery.hoverIntent.js', array( 'jquery' ), '1.0.0', true );
 
 			// Concatonated Scripts
-			// wp_enqueue_script( 'development-js', get_template_directory_uri() . '/assets/js/development.js', array( 'jquery' ), '1.0.0', false );
+			wp_enqueue_script( 'development-js', get_template_directory_uri() . '/assets/js/production.js', array( 'jquery' ), '1.0.0', false );
 
 			// Main Style
 			wp_enqueue_style( 'moxie_wiki-style',  get_template_directory_uri() . '/assets/css/style.css' );
@@ -172,7 +172,7 @@ if ( ! function_exists( 'moxie_wiki_scripts' ) ) :
 			wp_enqueue_script( 'hoverintent-js', get_template_directory_uri() . '/assets/js/vendor/hoverintent/jquery.hoverIntent.js', array( 'jquery' ), '1.0.0', true );
 
 			// Concatonated Scripts
-			// wp_enqueue_script( 'production-js', get_template_directory_uri() . '/assets/js/production-min.js', array( 'jquery' ), '1.0.0', false );
+			wp_enqueue_script( 'production-js', get_template_directory_uri() . '/assets/js/production-min.js', array( 'jquery' ), '1.0.0', false );
 
 			// Main Style
 			wp_enqueue_style( 'moxie_wiki-style',  get_template_directory_uri() . '/assets/css/style-min.css' );
