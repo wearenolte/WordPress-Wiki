@@ -368,7 +368,7 @@ function custom_post_link(){
 	# Taxonomy test, should be like tags
 	#$tax_tags = new Super_Custom_Taxonomy( 'tax-tag' );
 	# Taxonomy test, should be like categories
-	$tax_cats = new Super_Custom_Taxonomy( 'tax-cat', 'category', 'Category', 'category' );
+	$tax_cats = new Super_Custom_Taxonomy( 'tax-cat', 'category', 'Categories', 'category' );
 	# Connect both of the above taxonomies with the post type
 	connect_types_and_taxes( $custom_posts, $tax_cats );
 	# Add a meta box with every field type
