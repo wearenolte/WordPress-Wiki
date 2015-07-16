@@ -2,3 +2,7 @@
 
 .sass-cache
 node_modules/
+assets/bower_components
+assets/js/*.js
+assets/css/*.css
+assets/css/*.map
