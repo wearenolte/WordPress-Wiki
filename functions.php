@@ -152,7 +152,7 @@ if ( ! function_exists( 'moxie_wiki_scripts' ) ) :
 			wp_enqueue_script( 'hoverintent-js', get_template_directory_uri() . '/assets/js/vendor/hoverintent/jquery.hoverIntent.js', array( 'jquery' ), '1.0.0', true );
 
 			// Concatonated Scripts
-			// wp_enqueue_script( 'development-js', get_template_directory_uri() . '/assets/js/development.js', array( 'jquery' ), '1.0.0', false );
+			wp_enqueue_script( 'development-js', get_template_directory_uri() . '/assets/js/production.js', array( 'jquery' ), '1.0.0', false );
 
 			// Main Style
 			wp_enqueue_style( 'moxie_wiki-style',  get_template_directory_uri() . '/assets/css/style.css' );
@@ -172,7 +172,7 @@ if ( ! function_exists( 'moxie_wiki_scripts' ) ) :
 			wp_enqueue_script( 'hoverintent-js', get_template_directory_uri() . '/assets/js/vendor/hoverintent/jquery.hoverIntent.js', array( 'jquery' ), '1.0.0', true );
 
 			// Concatonated Scripts
-			// wp_enqueue_script( 'production-js', get_template_directory_uri() . '/assets/js/production-min.js', array( 'jquery' ), '1.0.0', false );
+			wp_enqueue_script( 'production-js', get_template_directory_uri() . '/assets/js/production-min.js', array( 'jquery' ), '1.0.0', false );
 
 			// Main Style
 			wp_enqueue_style( 'moxie_wiki-style',  get_template_directory_uri() . '/assets/css/style-min.css' );
@@ -358,6 +358,38 @@ function moxie_wiki_add_selectivizr()
 // $links = new Link();
 
 // include( 'meta-fields/link-fields.php' );
+
+function custom_post_link(){
+	if ( ! class_exists( 'Super_Custom_Post_Type' ) )
+		return;
+	$custom_posts = new Super_Custom_Post_Type( 'link' );
+	# Test Icon. Should be a square grid.
+	$custom_posts->set_icon( 'link' );
+	# Taxonomy test, should be like tags
+	#$tax_tags = new Super_Custom_Taxonomy( 'tax-tag' );
+	# Taxonomy test, should be like categories
+	$tax_cats = new Super_Custom_Taxonomy( 'tax-cat', 'category', 'Categories', 'category' );
+	# Connect both of the above taxonomies with the post type
+	connect_types_and_taxes( $custom_posts, $tax_cats );
+	# Add a meta box with every field type
+	$custom_posts->add_meta_box( array(
+		'id'      => 'details-link',
+		'context' => 'normal',
+		'fields'  => array(
+			'url-link'        => array(),
+			'description-link'       => array( 'type' => 'textarea' ),
+		)
+	) );
+}
+add_action( 'after_setup_theme', 'custom_post_link' );
+#Remove Wysiwyg and Excerpt
+add_action('init', 'init_remove_support',100);
+function init_remove_support(){
+    $post_type = 'link';
+    remove_post_type_support( $post_type, 'editor');
+    remove_post_type_support( $post_type, 'excerpt');
+}
+
 
 
 //Add svg support
