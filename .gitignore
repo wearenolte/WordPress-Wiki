@@ -1,30 +1,4 @@
-/*
-*~
 .DS_Store
 
 .sass-cache
 node_modules/
-
-!*.md
-
-!/.gitignore
-
-# wp-content
-!/wp-content/
-wp-content/*
-
-# wp-content/themes
-!/wp-content/themes/
-/wp-content/themes/*
-
-### Except the theme Moxie Wiki
-!moxie-wiki
-
-# Deploy Script Submodule
-!.gitmodules
-!wp-gulp-deploy
-!deploy.json
-
-# Ignore CI tool file
-!ci.sh
-!.travis.yml
