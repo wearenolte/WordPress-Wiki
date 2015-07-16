@@ -271,27 +271,6 @@ function init_remove_support(){
     remove_post_type_support( $post_type, 'excerpt');
 }
 
-
-
-//Add svg support
-add_filter('upload_mimes', 'my_upload_mimes');
-
-function my_upload_mimes($mimes = array()) {
-    $mimes['svg'] = 'image/svg+xml';
-    return $mimes;
-}
-
-function fix_svg() {
-   echo '<style type="text/css">
-         .attachment-266x266, .thumbnail img {
-              width: 100% !important;
-              height: auto !important;
-         }
-         </style>';
-}
-add_action('admin_head', 'fix_svg');
-
-
 //Add Field for logo
 function themeslug_theme_customizer( $wp_customize ) {
     // Fun code will go here
