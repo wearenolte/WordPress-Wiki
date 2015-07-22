@@ -257,3 +257,6 @@ function themeslug_theme_customizer( $wp_customize ) {
 }
 add_action( 'customize_register', 'themeslug_theme_customizer' );
 
+function glue_view_exist(){
+	return class_exists('\glue\View');
+}
