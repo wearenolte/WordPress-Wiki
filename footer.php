@@ -40,10 +40,12 @@
 		?>
 
 		<?php
-		View::make('shared/footer')
-		  ->with('foot_description', 'Wiki is a curated list of tools and resources for people who make websites.')
-		  ->with('nav_footer', $nav_footer)
-		  ->render();
+		if( glue_view_exist() ){
+			View::make('shared/footer')
+			  ->with('foot_description', 'Wiki is a curated list of tools and resources for people who make websites.')
+			  ->with('nav_footer', $nav_footer)
+			  ->render();
+		}
 		?>
 		<!-- <?php tha_footer_bottom(); ?> -->
 		<?php tha_footer_after(); ?>

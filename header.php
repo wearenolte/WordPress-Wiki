@@ -18,14 +18,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<style type="text/css">
-		<?php if ( 'no' === get_theme_mod( 'some-like-it-neat_post_format_support' ) ) : ?>
-			h1.entry-title:before {
-				display: none;
-			}
-		<?php endif; ?>
-	</style>
-
 	<?php tha_head_bottom(); ?>
 	<?php wp_head(); ?>
 </head>
@@ -42,16 +34,20 @@
 				$image_url = esc_url( get_theme_mod( 'themeslug_logo' ) );
 			 ?>
 			<?php
-			View::make('shared/logo_desktop')
-			  ->with('site_url', get_site_url())
-			  ->with('site_name', get_bloginfo())
-			  ->with('logo_url', $image_url)
-			  ->render();
+			if ( glue_view_exist() ) {
+				View::make('shared/logo_desktop')
+				  ->with('site_url', get_site_url())
+				  ->with('site_name', get_bloginfo())
+				  ->with('logo_url', $image_url)
+				  ->render();
+			}
 			?>
 
 			<?php
-			View::make('shared/navbar')
-			  ->render();
+			if( glue_view_exist() ){
+				View::make('shared/navbar')
+				  ->render();
+			}
 			?>
 		</aside>
 
