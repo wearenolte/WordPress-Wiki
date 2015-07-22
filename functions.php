@@ -102,11 +102,6 @@ if ( ! function_exists( 'moxie_wiki_setup' ) ) :
 		include get_template_directory() . '/library/vendors/customizer/customizer.php';
 
 		/**
-	 * Implement the Custom Header feature.
-	 */
-		//require get_template_directory() . '/library/vendors/custom-header.php';
-
-		/**
 	 * Custom template tags for this theme.
 	 */
 		include get_template_directory() . '/library/vendors/template-tags.php';
@@ -138,39 +133,12 @@ if ( ! function_exists( 'moxie_wiki_scripts' ) ) :
 	{
 
 		if ( SCRIPT_DEBUG || WP_DEBUG ) :
-			// Vendor Scripts
-			wp_register_script( 'modernizr-js', get_template_directory_uri() . '/assets/js/vendor/modernizr/modernizr.js', array( 'jquery' ), '2.8.2', true );
-			wp_enqueue_script( 'modernizr-js', get_template_directory_uri() . '/assets/js/vendor/modernizr/modernizr.js', array( 'jquery' ), '2.8.2', true );
-
-			wp_register_script( 'selectivizr-js', get_template_directory_uri() . '/assets/js/vendor/selectivizr/selectivizr.js', array( 'jquery' ), '1.0.2b', true );
-			wp_enqueue_script( 'selectivizr-js', get_template_directory_uri() . '/assets/js/vendor/selectivizr/selectivizr.js', array( 'jquery' ), '1.0.2b', true );
-
-			wp_register_script( 'flexnav-js', get_template_directory_uri() . '/assets/js/vendor/flexnav/jquery.flexnav.js', array( 'jquery' ), '1.3.3', true );
-			wp_enqueue_script( 'flexnav-js', get_template_directory_uri() . '/assets/js/vendor/flexnav/jquery.flexnav.js', array( 'jquery' ), '1.3.3', true );
-
-			wp_register_script( 'hoverintent-js', get_template_directory_uri() . '/assets/js/vendor/hoverintent/jquery.hoverIntent.js', array( 'jquery' ), '1.0.0', true );
-			wp_enqueue_script( 'hoverintent-js', get_template_directory_uri() . '/assets/js/vendor/hoverintent/jquery.hoverIntent.js', array( 'jquery' ), '1.0.0', true );
-
 			// Concatonated Scripts
 			wp_enqueue_script( 'development-js', get_template_directory_uri() . '/assets/js/production.js', array( 'jquery' ), '1.0.0', false );
 
 			// Main Style
 			wp_enqueue_style( 'moxie_wiki-style',  get_template_directory_uri() . '/assets/css/style.css' );
-
 	 else :
-			// Vendor Scripts
-			wp_register_script( 'modernizr-js', get_template_directory_uri() . '/assets/js/vendor/modernizr/modernizr.js', array( 'jquery' ), '2.8.2', true );
-			wp_enqueue_script( 'modernizr-js', get_template_directory_uri() . '/assets/js/vendor/modernizr/modernizr.js', array( 'jquery' ), '2.8.2', true );
-
-			wp_register_script( 'selectivizr-js', get_template_directory_uri() . '/assets/js/vendor/selectivizr/selectivizr.js', array( 'jquery' ), '1.0.2b', true );
-			wp_enqueue_script( 'selectivizr-js', get_template_directory_uri() . '/assets/js/vendor/selectivizr/selectivizr.js', array( 'jquery' ), '1.0.2b', true );
-
-			wp_register_script( 'flexnav-js', get_template_directory_uri() . '/assets/js/vendor/flexnav/jquery.flexnav.js', array( 'jquery' ), '1.3.3', true );
-			wp_enqueue_script( 'flexnav-js', get_template_directory_uri() . '/assets/js/vendor/flexnav/jquery.flexnav.js', array( 'jquery' ), '1.3.3', true );
-
-			wp_register_script( 'hoverintent-js', get_template_directory_uri() . '/assets/js/vendor/hoverintent/jquery.hoverIntent.js', array( 'jquery' ), '1.0.0', true );
-			wp_enqueue_script( 'hoverintent-js', get_template_directory_uri() . '/assets/js/vendor/hoverintent/jquery.hoverIntent.js', array( 'jquery' ), '1.0.0', true );
-
 			// Concatonated Scripts
 			wp_enqueue_script( 'production-js', get_template_directory_uri() . '/assets/js/production-min.js', array( 'jquery' ), '1.0.0', false );
 
@@ -206,31 +174,6 @@ function moxie_wiki_widgets_init()
 	);
 }
 add_action( 'widgets_init', 'moxie_wiki_widgets_init' );
-
-/**
- * Initializing Flexnav Menu System
- */
-if ( ! function_exists( 'dg_add_flexnav' ) ) :
-	function dg_add_flexnav()
-	{
-	?>
-			<script>
-				// Init Flexnav Menu
-				jQuery(document).ready(function($){
-					$(".flexnav").flexNav({
-						'animationSpeed' : 250, // default drop animation speed
-						'transitionOpacity': true, // default opacity animation
-							'buttonSelector': '.menu-button', // default menu button class
-							'hoverIntent': true, // use with hoverIntent plugin
-							'hoverIntentTimeout': 350, // hoverIntent default timeout
-							'calcItemWidths': false // dynamically calcs top level nav item widths
-						});
-				});
-			</script>
-			<?php
-	}
-	add_action( 'wp_footer', 'dg_add_flexnav' );
-endif;
 
 /**
  * Add Singular Post Template Navigation
@@ -292,68 +235,6 @@ if ( ! function_exists( 'moxie_wiki_add_breadcrumbs' ) ) :
 	add_action( 'tha_content_top', 'moxie_wiki_add_breadcrumbs' );
 endif;
 
-if ( ! function_exists( 'moxie_wiki_optional_scripts' ) ) :
-	function moxie_wiki_optional_scripts()
-	{
-		// Link Color
-		if ( '' != get_theme_mod( 'moxie_wiki_add_link_color' )  ) {
-		} ?>
-			<style type="text/css">
-				a { color: <?php echo get_theme_mod( 'moxie_wiki_add_link_color' ); ?>; }
-			</style>
-		<?php
-	}
-	add_action( 'wp_head', 'moxie_wiki_optional_scripts' );
-endif;
-
-if ( ! function_exists( 'moxie_wiki_mobile_styles' ) ) :
-	function moxie_wiki_mobile_styles()
-	{
-		$value = get_theme_mod( 'moxie_wiki_mobile_hide_arrow' );
-
-		if ( 0 == get_theme_mod( 'moxie_wiki_mobile_hide_arrow' ) ) { ?>
-								<style>
-								.menu-button i.navicon {
-									display: none;
-								}
-								</style>
-							<?php
-		} else {
-
-		}
-	}
-	add_action( 'wp_head', 'moxie_wiki_mobile_styles' );
-endif;
-
-if ( ! function_exists( 'moxie_wiki_add_footer_divs' ) ) :
-	function moxie_wiki_add_footer_divs()
-	{
-	?>
-
-			<div class="footer-left">
-				<?php echo esc_attr( get_theme_mod( 'moxie_wiki_footer_left', __( '&copy; All Rights Reserved', 'some-like-it-neat' ) ) ); ?>
-
-			</div>
-			<div class="footer-right">
-				<?php echo esc_attr( get_theme_mod( 'moxie_wiki_footer_right', 'Footer Content Right' ) );  ?>
-			</div>
-		<?php
-	}
-	add_action( 'tha_footer_bottom', 'moxie_wiki_add_footer_divs' );
-endif;
-
-add_action( 'tha_head_bottom', 'moxie_wiki_add_selectivizr' );
-function moxie_wiki_add_selectivizr()
-{
-	?>
-	<!--[if (gte IE 6)&(lte IE 8)]>
-  		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/selectivizr/selectivizr-min.js"></script>
-  		<noscript><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" /></noscript>
-	<![endif]-->
-<?php
-}
-
-
 // include( 'custom-post-types/link.php' );
 // $links = new Link();
 
@@ -390,27 +271,6 @@ function init_remove_support(){
     remove_post_type_support( $post_type, 'excerpt');
 }
 
-
-
-//Add svg support
-add_filter('upload_mimes', 'my_upload_mimes');
-
-function my_upload_mimes($mimes = array()) {
-    $mimes['svg'] = 'image/svg+xml';
-    return $mimes;
-}
-
-function fix_svg() {
-   echo '<style type="text/css">
-         .attachment-266x266, .thumbnail img {
-              width: 100% !important;
-              height: auto !important;
-         }
-         </style>';
-}
-add_action('admin_head', 'fix_svg');
-
-
 //Add Field for logo
 function themeslug_theme_customizer( $wp_customize ) {
     // Fun code will go here
@@ -429,6 +289,4 @@ function themeslug_theme_customizer( $wp_customize ) {
     ) ) );
 }
 add_action( 'customize_register', 'themeslug_theme_customizer' );
-
-
 
