@@ -164,17 +164,18 @@
 	<?php foreach ( $categories as $category ): ?>
 		<li class="item-accordion">
 			<h3 class="js-accordion-trigger">
-				<?php echo $category->name; ?>
+				<?php // echo $category->name; ?>
 				<span class="link-icon icon-keyboard-arrow-right"></span>
 			</h3>
 			<ul class="sub">
 				<?php
-					$childs = array('child_of' => $category->term_id, 'taxonomy' => 'tax-cat', 'hide_empty' => 0,);
-					$childs_categories = get_categories( $childs );
+					/* $childs = array('child_of' => $category->term_id, 'taxonomy' => 'tax-cat', 'hide_empty' => 0,); */
+					/* $childs_categories = get_categories( $childs ); */
 				?>
-				<?php foreach( $childs_categories as $child ): ?>
-					<li>	<a href="<?php echo get_category_link( $child->term_id ); ?>"><?php echo $child->name ?></a></li>
-				<?php endforeach; ?>
+				<?php /* foreach( $childs_categories as $child ): ?>
+					<li>	<a href="<?php // echo get_category_link( $child->term_id ); ?>"><?php echo $child->name ?></a></li>
+        <?php // endforeach;
+         */?>
 			</ul>
 		</li>
 	<?php endforeach; ?>
