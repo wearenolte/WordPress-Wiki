@@ -100,6 +100,7 @@ if ( ! function_exists( 'moxie_wiki_setup' ) ) :
 
 		include 'post-types/class-link.php';
 		include 'taxonomy/class-links-category.php';
+		include 'taxonomy/helper.php';
 
 		$links = array(
 			'post_type' => new moxie\Link(),
