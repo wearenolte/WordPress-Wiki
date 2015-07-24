@@ -57,7 +57,7 @@
 			<header class="header flex-child">
 				<?php
 				if( glue_view_exist() ){
-					$total = wp_count_posts('links');
+					$total = wp_count_posts( LINKS_POST_TYPE );
 					View::make('shared/counter')
 						->with('total', $total->publish)
 						->with('prefix', 'Browsing')
