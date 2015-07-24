@@ -26,23 +26,7 @@
 <?php tha_body_top(); ?>
 
 	<div class="flex-child row-parent">
-
-		<aside>
-		<?php
-		$image_url = esc_url( get_theme_mod( 'themeslug_logo' ) );
-
-		if ( glue_view_exist() ) {
-			View::make('header/logo-desktop')
-			  ->with('site_url', get_site_url())
-			  ->with('site_name', get_bloginfo())
-			  ->with('logo_url', $image_url)
-			  ->render();
-
-			View::make('shared/navbar')
-			  ->render();
-		}
-		?>
-		</aside>
+		<?php get_sidebar(); ?>
 
 		<div class="column-parent">
 		<?php
