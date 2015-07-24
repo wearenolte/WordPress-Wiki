@@ -87,6 +87,9 @@ if ( ! function_exists( 'moxie_wiki_setup' ) ) :
 		include 'library/vendors/theme-hook-alliance/tha-theme-hooks.php' ;
 		include 'post-types/class-link.php';
 
+		if( ! defined('LINKS_POST_TYPE') ){
+			define('LINKS_POST_TYPE', 'links');
+		}
 		$link_post_type = new moxie\Link();
 
 		/**
@@ -170,7 +173,7 @@ if ( ! function_exists( 'moxie_wiki_post_navigation' ) ) :
 				array(
 					'prev_text'    => __( '&larr; %title', 'some-like-it-neat' ),
 					'next_text'    => __( '%title &rarr;', 'some-like-it-neat' ),
-					'screen_reader_text' => __( 'Page navigation', 'some-like-it-neat' )
+					'screen_reader_text' => __( 'Page navigation', 'some-like-it-neat' ),
 				)
 			);
 		} else {
@@ -200,7 +203,7 @@ if ( ! function_exists( 'moxie_wiki_add_breadcrumbs' ) ) :
 						'post_format'
 					),
 					'taxonomy_excluded_terms' => array(
-						'category' => array( 'uncategorized' )
+						'category' => array( 'uncategorized' ),
 					),
 					'post_types' => array(
 						'gizmo' => array(
@@ -209,8 +212,8 @@ if ( ! function_exists( 'moxie_wiki_add_breadcrumbs' ) ) :
 						),
 						'whatzit' => array(
 							'separator' => '&raquo;',
-						)
-					)
+						),
+					),
 				)
 			);
 			}
@@ -238,6 +241,13 @@ function themeslug_theme_customizer( $wp_customize ) {
 }
 add_action( 'customize_register', 'themeslug_theme_customizer' );
 
-function glue_view_exist(){
-	return class_exists('\glue\View');
+/**
+ * Determine if the Glue plugin exists or not
+ *
+ * @return bool
+ */
+if ( ! function_exists( 'glue_view_exist' ) ) {
+	function glue_view_exist(){
+		return class_exists('\glue\View');
+	}
 }
