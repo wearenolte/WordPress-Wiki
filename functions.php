@@ -87,6 +87,11 @@ if ( ! function_exists( 'moxie_wiki_setup' ) ) :
 		include 'library/vendors/theme-hook-alliance/tha-theme-hooks.php' ;
 		include 'post-types/class-link.php';
 
+		/**
+		 * Define a constant to storage the name of the custom post type that
+		 * handles the links, can be changed to any value and it will update the
+		 * usage everywhere.
+		 */
 		if( ! defined('LINKS_POST_TYPE') ){
 			define('LINKS_POST_TYPE', 'links');
 		}
