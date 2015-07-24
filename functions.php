@@ -73,30 +73,38 @@ if ( ! function_exists( 'moxie_wiki_setup' ) ) :
 			) );
 
 			function moxie_wiki_infinite_scroll_render() {
-				if ( have_posts() ) : while ( have_posts() ) : the_post();
-				get_template_part( 'page-templates/partials/content', get_post_format() );
-endwhile;
-endif;
+				if ( have_posts() ) :
+					while ( have_posts() ) : the_post();
+						get_template_part( 'page-templates/partials/content', get_post_format() );
+					endwhile;
+				endif;
 			}
 		}
-
-		// Setup the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background', apply_filters(
-				'moxie_wiki_custom_background_args', array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
 
 		/**
 		 * Including Theme Hook Alliance (https://github.com/zamoose/themehookalliance).
 		 */
 		include 'library/vendors/theme-hook-alliance/tha-theme-hooks.php' ;
-		include 'post-types/class-link.php';
 
-		$link_post_type = new moxie\Link();
+		/**
+		 * Define a constant to storage the name of the custom post type that
+		 * handles the links, can be changed to any value and it will update the
+		 * usage everywhere.
+		 */
+		if( ! defined('LINKS_POST_TYPE') ) {
+			define( 'LINKS_POST_TYPE', 'links' );
+		}
+		if( ! defined('LINKS_TAXONOMY') ) {
+			define( 'LINKS_TAXONOMY', 'links-category' );
+		}
+
+		include 'post-types/class-link.php';
+		include 'taxonomy/class-links-category.php';
+
+		$links = array(
+			'post_type' => new moxie\Link(),
+			'taxonomy' => new moxie\Category(),
+		);
 
 		/**
 		 * WP Customizer
@@ -124,46 +132,38 @@ endif;
 		include_once get_template_directory() . '/library/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php' ;
 
 	}
-endif; // moxie_wiki_setup
+endif;
 add_action( 'after_setup_theme', 'moxie_wiki_setup' );
 
 /**
  * Enqueue scripts and styles.
  */
 if ( ! function_exists( 'moxie_wiki_scripts' ) ) :
-	function moxie_wiki_scripts()
-	{
+	function moxie_wiki_scripts() {
 
 		if ( SCRIPT_DEBUG || WP_DEBUG ) :
 			// Concatonated Scripts
 			wp_enqueue_script( 'development-js', get_template_directory_uri() . '/assets/js/production.js', array( 'jquery' ), '1.0.0', false );
-
-		// Main Style
-		wp_enqueue_style( 'moxie_wiki-style',  get_template_directory_uri() . '/assets/css/style.css' );
+			// Main Style
+			wp_enqueue_style( 'moxie_wiki-style',  get_template_directory_uri() . '/assets/css/style.css' );
 		else :
 			// Concatonated Scripts
 			wp_enqueue_script( 'production-js', get_template_directory_uri() . '/assets/js/production-min.js', array( 'jquery' ), '1.0.0', false );
+			// Main Style
+			wp_enqueue_style( 'moxie_wiki-style',  get_template_directory_uri() . '/assets/css/style-min.css' );
+		endif;
 
-		// Main Style
-		wp_enqueue_style( 'moxie_wiki-style',  get_template_directory_uri() . '/assets/css/style-min.css' );
-
-endif;
-
-// Dashicons
-wp_enqueue_style( 'dashicons' );
-
-if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-	wp_enqueue_script( 'comment-reply' );
-}
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
 	}
-add_action( 'wp_enqueue_scripts', 'moxie_wiki_scripts' );
-endif; // Enqueue Scripts and Styles
+	add_action( 'wp_enqueue_scripts', 'moxie_wiki_scripts' );
+endif;
 
 /**
  * Register widgetized area and update sidebar with default widgets.
  */
-function moxie_wiki_widgets_init()
-{
+function moxie_wiki_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => __( 'Sidebar', 'some-like-it-neat' ),
@@ -187,7 +187,7 @@ if ( ! function_exists( 'moxie_wiki_post_navigation' ) ) :
 				array(
 					'prev_text'    => __( '&larr; %title', 'some-like-it-neat' ),
 					'next_text'    => __( '%title &rarr;', 'some-like-it-neat' ),
-					'screen_reader_text' => __( 'Page navigation', 'some-like-it-neat' )
+					'screen_reader_text' => __( 'Page navigation', 'some-like-it-neat' ),
 				)
 			);
 		} else {
@@ -206,8 +206,7 @@ add_action( 'tha_entry_after', 'moxie_wiki_post_navigation' );
  * Custom Hooks and Filters
  */
 if ( ! function_exists( 'moxie_wiki_add_breadcrumbs' ) ) :
-	function moxie_wiki_add_breadcrumbs()
-	{
+	function moxie_wiki_add_breadcrumbs() {
 		if ( ! is_front_page() ) {
 			if ( function_exists( 'HAG_Breadcrumbs' ) ) { HAG_Breadcrumbs(
 				array(
@@ -218,7 +217,7 @@ if ( ! function_exists( 'moxie_wiki_add_breadcrumbs' ) ) :
 						'post_format'
 					),
 					'taxonomy_excluded_terms' => array(
-						'category' => array( 'uncategorized' )
+						'category' => array( 'uncategorized' ),
 					),
 					'post_types' => array(
 						'gizmo' => array(
@@ -227,8 +226,8 @@ if ( ! function_exists( 'moxie_wiki_add_breadcrumbs' ) ) :
 						),
 						'whatzit' => array(
 							'separator' => '&raquo;',
-						)
-					)
+						),
+					),
 				)
 			);
 			}
@@ -256,6 +255,13 @@ function themeslug_theme_customizer( $wp_customize ) {
 }
 add_action( 'customize_register', 'themeslug_theme_customizer' );
 
-function glue_view_exist(){
-	return class_exists('\glue\View');
+/**
+ * Determine if the Glue plugin exists or not
+ *
+ * @return bool
+ */
+if ( ! function_exists( 'glue_view_exist' ) ) {
+	function glue_view_exist(){
+		return class_exists('\glue\View');
+	}
 }

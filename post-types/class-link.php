@@ -2,7 +2,7 @@
 namespace moxie;
 
 class Link {
-	private $post_type = 'links';
+	private $post_type = LINKS_POST_TYPE;
 	private $editor_options = array(
 		'title',
 		'thumbnail',
