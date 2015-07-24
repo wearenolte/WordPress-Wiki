@@ -85,17 +85,26 @@ if ( ! function_exists( 'moxie_wiki_setup' ) ) :
 		 * Including Theme Hook Alliance (https://github.com/zamoose/themehookalliance).
 		 */
 		include 'library/vendors/theme-hook-alliance/tha-theme-hooks.php' ;
-		include 'post-types/class-link.php';
 
 		/**
 		 * Define a constant to storage the name of the custom post type that
 		 * handles the links, can be changed to any value and it will update the
 		 * usage everywhere.
 		 */
-		if( ! defined('LINKS_POST_TYPE') ){
-			define('LINKS_POST_TYPE', 'links');
+		if( ! defined('LINKS_POST_TYPE') ) {
+			define( 'LINKS_POST_TYPE', 'links' );
 		}
-		$link_post_type = new moxie\Link();
+		if( ! defined('LINKS_TAXONOMY') ) {
+			define( 'LINKS_TAXONOMY', 'links-category' );
+		}
+
+		include 'post-types/class-link.php';
+		include 'taxonomy/class-links-category.php';
+
+		$links = array(
+			'post_type' => new moxie\Link(),
+			'taxonomy' => new moxie\Category(),
+		);
 
 		/**
 		 * WP Customizer
