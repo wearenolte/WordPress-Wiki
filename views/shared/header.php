@@ -1,14 +1,11 @@
 <header class="header flex-child">
-	<?php if( $view->has('counter') ): ?>
+	<?php if ( $view->has( $counter ) ): ?>
 		<?php $counter->render(); ?>
 	<?php endif; ?>
-	<div class="search-container" data-behavior="search-toggle">
-		<form class="searchbox" action="http://wwwhere.io/search/results">
-			<input type="text" name="q" placeholder="Search" class="searchbox-input" onkeyup="buttonUp()">
-			<input type="submit" class="searchbox-submit" value="Go">
-			<span class="searchbox-icon icon-search js-search-toggle"></span>
-		</form>
-	</div>
+
+	<?php if ( $view->has( $search_form ) ): ?>
+		<?php $search_form; ?>
+	<?php endif; ?>
 	<div class="menu-mobile button-default" data-behavior="modal-open"><span class="js-open-modal icon-menu"></span></div>
 	<div class="sharing">
 		<ul class="social-sharing">

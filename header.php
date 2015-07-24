@@ -32,7 +32,7 @@
 		$image_url = esc_url( get_theme_mod( 'themeslug_logo' ) );
 
 		if ( glue_view_exist() ) {
-			View::make('shared/logo_desktop')
+			View::make('shared/logo-desktop')
 			  ->with('site_url', get_site_url())
 			  ->with('site_name', get_bloginfo())
 			  ->with('logo_url', $image_url)
@@ -52,8 +52,9 @@
 				->with('total', $total->publish)
 				->with('prefix', 'Browsing');
 
-			$header = View::make('shared/header')
-				->with('counter', $counter)
+			$header = View::make( 'shared/header' )
+				->with( 'counter', $counter )
+				->with( 'search_form', get_search_form() )
 				->render();
 		}
 		?>
