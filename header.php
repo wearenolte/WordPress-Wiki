@@ -27,57 +27,33 @@
 
 	<div class="flex-child row-parent">
 
-		<!-- Aside -->
-
 		<aside>
-			<?php
-				$image_url = esc_url( get_theme_mod( 'themeslug_logo' ) );
-			 ?>
-			<?php
-			if ( glue_view_exist() ) {
-				View::make('shared/logo_desktop')
-				  ->with('site_url', get_site_url())
-				  ->with('site_name', get_bloginfo())
-				  ->with('logo_url', $image_url)
-				  ->render();
-			}
-			?>
+		<?php
+		$image_url = esc_url( get_theme_mod( 'themeslug_logo' ) );
 
-			<?php
-			if( glue_view_exist() ){
-				View::make('shared/navbar')
-				  ->render();
-			}
-			?>
+		if ( glue_view_exist() ) {
+			View::make('shared/logo_desktop')
+			  ->with('site_url', get_site_url())
+			  ->with('site_name', get_bloginfo())
+			  ->with('logo_url', $image_url)
+			  ->render();
+
+			View::make('shared/navbar')
+			  ->render();
+		}
+		?>
 		</aside>
 
 		<div class="column-parent">
+		<?php
+		if ( glue_view_exist() ){
+			$total = wp_count_posts( LINKS_POST_TYPE );
+			$counter = View::make('shared/counter')
+				->with('total', $total->publish)
+				->with('prefix', 'Browsing');
 
-			<!-- Header -->
-			<header class="header flex-child">
-				<?php
-				if( glue_view_exist() ){
-					$total = wp_count_posts( LINKS_POST_TYPE );
-					View::make('shared/counter')
-						->with('total', $total->publish)
-						->with('prefix', 'Browsing')
-						->render();
-				}
-				?>
-				<div class="search-container" data-behavior="search-toggle">
-					<form class="searchbox" action="http://wwwhere.io/search/results">
-						<input type="text" name="q" placeholder="Search" class="searchbox-input" onkeyup="buttonUp()">
-						<input type="submit" class="searchbox-submit" value="Go">
-						<span class="searchbox-icon icon-search js-search-toggle"></span>
-					</form>
-				</div>
-				<div class="menu-mobile button-default" data-behavior="modal-open"><span class="js-open-modal icon-menu"></span></div>
-				<div class="sharing">
-					<ul class="social-sharing">
-						<li><a href="" class="popup share-twitter"><span class="share-icon icon-twitter"></span> <span class="share-text">tweet</span></a></li>
-						<li><a href="" class="popup share-facebook"><span class="share-icon icon-facebook"></span> <span class="share-text">share</span></a></li>
-					</ul>
-				</div>
-			</header>
-
-
+			$header = View::make('shared/header')
+				->with('counter', $counter)
+				->render();
+		}
+		?>
