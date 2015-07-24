@@ -32,7 +32,7 @@
 		$image_url = esc_url( get_theme_mod( 'themeslug_logo' ) );
 
 		if ( glue_view_exist() ) {
-			View::make('shared/logo-desktop')
+			View::make('header/logo-desktop')
 			  ->with('site_url', get_site_url())
 			  ->with('site_name', get_bloginfo())
 			  ->with('logo_url', $image_url)
@@ -48,11 +48,11 @@
 		<?php
 		if ( glue_view_exist() ){
 			$total = wp_count_posts( LINKS_POST_TYPE );
-			$counter = View::make('shared/counter')
+			$counter = View::make('header/counter')
 				->with('total', $total->publish)
 				->with('prefix', 'Browsing');
 
-			$header = View::make( 'shared/header' )
+			$header = View::make( 'header/header' )
 				->with( 'counter', $counter )
 				->with( 'search_form', get_search_form() )
 				->render();
