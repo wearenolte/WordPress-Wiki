@@ -1,17 +1,41 @@
-<?php
+<?php namespace moxie;
 
-	function add_meta_box_2( $post_type ) {
-		$post_types = array('post', 'link');     //limit meta box to certain post types
-        if ( in_array( $post_type, $post_types )) {
-			add_meta_box(
-				'url'
-				,__( 'Url Link', 'myplugin_textdomain' )
-				,array( $this, 'render_meta_box_content' )
-				,$post_type
-				,'advanced'
-				,'high'
-			);
-        }
+class Meta_Fields{
+
+	private $options = array();
+
+	public function __construct(){
+		$this->set_options();
+		add_action( 'add_meta_boxes', array( $this, 'register' ) );
 	}
 
-	add_action('add_meta_box','add_meta_box_2');
+	public function register(){
+		extract( $this->get_options() );
+		add_meta_box( $id, $title, $callback, $screen, $context, $priority );
+	}
+
+	public function set_options(){
+		$this->options = array(
+			'id' => 'moxie-wiki-meta-fields',
+			'title' => 'Link Data',
+			'callback' => array( $this, 'render_meta_fields' ),
+			'screen' => LINKS_POST_TYPE,
+			'context' => 'normal',
+			'priority' => 'high',
+		);
+	}
+
+	public function get_options(){
+		return $this->options;
+	}
+
+	public function render_meta_fields(){
+		wp_nonce_field( 'links_meta_fields', 'links_meta_fields_validate');
+?>
+		<label for="link_url">URL of the Link: </label>
+		<input type="text" name="link_url" id="link_url" placeholder="http://getmoxied.net" />
+<?php
+	}
+}
+
+$meta_fields = new Meta_Fields();

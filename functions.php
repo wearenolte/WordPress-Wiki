@@ -107,6 +107,10 @@ if ( ! function_exists( 'moxie_wiki_setup' ) ) :
 			'taxonomy' => new moxie\Category(),
 		);
 
+		// Include link meta boxes
+		include 'meta-fields/link-fields.php' ;
+
+
 		/**
 		 * WP Customizer
 		 */
