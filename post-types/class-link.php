@@ -7,7 +7,8 @@ class Link {
 		'title',
 		'thumbnail',
 		'author',
-		'revisions'
+		'revisions',
+		'editor'
 	);
 
 	public function __construct() {
