@@ -136,6 +136,9 @@ if ( ! function_exists( 'moxie_wiki_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'moxie_wiki_setup' );
 
+// Include link meta boxes
+include 'meta-fields/link-fields.php' ;
+
 /**
  * Enqueue scripts and styles.
  */
