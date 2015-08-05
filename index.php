@@ -23,7 +23,7 @@ $links = new WP_Query( $args );
 		if ( glue_view_exist() ){
 			glue\View::make('link/single')
 				->with('title', get_the_title())
-				->with('link', get_permalink())
+				->with('link', wp_get_shortlink())
 				->render();
 		}
 		?>
