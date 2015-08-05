@@ -7,31 +7,32 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content">
+<?php
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+$args = array(
+	'post_type' => LINKS_POST_TYPE,
+	'post_status' => 'published',
+	'paged' => $paged
+);
+$links = new WP_Query( $args );
+?>
+		<?php if ( $links->have_posts() ) : ?>
 
-		<?php if ( have_posts() ) : ?>
-
-		<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'page-templates/partials/content', get_post_format() );
-				?>
-
+		<?php while ( $links->have_posts() ) : $links->the_post(); ?>
+		<?php
+		if ( glue_view_exist() ){
+			glue\View::make('link/single')
+				->with('title', get_the_title())
+				->with('link', get_permalink())
+				->render();
+		}
+		?>
 		<?php endwhile; ?>
 
 		<?php else : ?>
 
 		<?php get_template_part( 'page-templates/partials/content', 'none' ); ?>
 
-		<?php
-endif; ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
+		<?php endif; ?>
 
 <?php get_footer(); ?>
