@@ -30,6 +30,7 @@
 
 		<div class="column-parent">
 		<?php
+		$image_url = esc_url( get_theme_mod( 'themeslug_logo' ) );
 		if ( glue_view_exist() ){
 			$total = wp_count_posts( LINKS_POST_TYPE );
 			$counter = View::make('header/counter')
@@ -39,6 +40,9 @@
 			$header = View::make( 'header/header' )
 				->with( 'counter', $counter )
 				->with( 'search_form', get_search_form() )
+				->with( 'site_url', get_site_url() )
+				->with( 'site_name', get_bloginfo() )
+				->with( 'logo_url', $image_url )
 				->render();
 		}
 		?>
