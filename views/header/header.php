@@ -1,4 +1,10 @@
 <header class="header flex-child">
+	<?php if ( get_theme_mod( 'themeslug_logo' ) ) : ?>
+		<a href="<?php echo $site_url ?>" class="logo-mobile" title='<?php echo $site_name ?>' rel='home'>
+			<img src='<?php echo $logo_url ?>' alt='<?php echo $site_name ?>'>
+		</a>
+	<?php else : ?>
+	<?php endif; ?>
 	<?php if ( $view->has( $counter ) ): ?>
 		<?php $counter->render(); ?>
 	<?php endif; ?>
