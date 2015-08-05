@@ -9,10 +9,27 @@
 	margin-right: 1%;
 	margin-bottom: 1%;
 
-	&:nth-child(even){
-		margin-right: 0;
-		@include media($small-desktop){
-			margin-right: auto;
+	@include media($xl-desktop){
+		width: 24.25%;
+
+		&:nth-child(4n){
+			margin-right: 0;
+			@include media($small-desktop){
+				margin-right: auto;
+			}
+		}
+	}
+	@include media($large-desktop){
+		width: 32.6666%;
+
+		&:nth-child(3n){
+			margin-right: 0;
+		}
+	}
+
+	@include media($med-desktop){
+		&:nth-child(even){
+			margin-right: 0;
 		}
 	}
 
@@ -51,11 +68,11 @@
 		right: 10px;
 		-webkit-transition: all .2s ease;
 		transition: all .2s ease;
-		padding: 10px 15px;
+		padding: 5px 10px 1px;
 		background-color: $light-gray;
 
 		span{
-			@include fontSize(40px);
+			@include fontSize(20px);
 			color: $white;
 
 			@include media($mobile){
@@ -118,6 +135,7 @@
 	.link-title{
 		@include fontSize(16px);
 		margin-bottom: 2px;
+		padding-right: 35px;
 	}
 	.link-address{
 		@include fontSize(13px);
