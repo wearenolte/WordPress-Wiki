@@ -10,3 +10,5 @@ composer.phar
 composer.lock
 library/vendors/composer/
 
+.ruby-gemset
+.ruby-version
