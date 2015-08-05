@@ -1,0 +1,39 @@
+.navigation{
+  max-width: 500px;
+
+  margin: 20px auto;
+  clear: both;
+
+  .arrow{
+    width: 48%;
+    a{
+      background-color: $primary-color;
+      padding: 5px;
+      text-align: center;
+      width: 70%;
+      display: block;
+    }
+  }
+
+  .icon{
+    svg{
+      width: 35px;
+      height: 35px;
+      fill: $white;
+    }
+  }
+
+  .previous{
+    float: left;
+  }
+
+  .next{
+    float: right;
+  }
+
+  &:after{
+    content: '';
+    clear: both;
+    display: block;
+  }
+}
