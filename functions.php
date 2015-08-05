@@ -271,16 +271,18 @@ if ( ! function_exists( 'glue_view_exist' ) ) {
 	}
 }
 
-function get_attached_categories( $link_id ){
-	$terms = get_the_terms($links->the_post->ID, LINKS_TAXONOMY);
-	$terms = is_array( $terms ) ? $terms : array();
-	$results = array();
-	foreach( $terms as $term ){
-		$results[] = array(
-			'name' => $term->name,
-			'id' => $term->id,
-			'link' =>  get_term_link( $term ),
-		);
+if( ! function_exists( 'get_attached_categories' ) ) {
+	function get_attached_categories( $link_id ){
+		$terms = get_the_terms($links->the_post->ID, LINKS_TAXONOMY);
+		$terms = is_array( $terms ) ? $terms : array();
+		$results = array();
+		foreach( $terms as $term ){
+			$results[] = array(
+				'name' => $term->name,
+				'id' => $term->id,
+				'link' =>  get_term_link( $term ),
+			);
+		}
+		return $results;
 	}
-	return $results;
 }
