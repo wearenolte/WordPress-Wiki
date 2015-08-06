@@ -15,33 +15,35 @@ $args = array(
 	'paged' => $paged
 );
 $links = new WP_Query( $args );
-if ( $links->have_posts() ) :
-?>
-	<section class="list-links flex-child">
-	<?php
+
+if ( $links->have_posts() ) {
+
+	$links_collection = array();
+
 	while ( $links->have_posts() ) : $links->the_post();
 		if ( glue_view_exist() ){
-
 			$id = $links->post->ID;
-
-			View::make('link/single')
+			$links_collection[] = View::make('link/single')
 				->with('title', get_the_title())
 				->with('link', wp_get_shortlink())
-				->with('categories', get_attached_categories( $id ) )
-				->render();
+				->with('categories', get_attached_categories( $id ) );
 		}
 	endwhile;
-	?>
-	</section>
-	<?php
-	View::make('link/navigation')
-		->with( 'prev', get_previous_posts_link() )
-		->with( 'next',  get_next_posts_link() )
-		->render();
 
-else :
+	if( glue_view_exist() ){
+		View::make( 'link/grid' )
+			->with( 'links', $links_collection )
+			->render();
+
+		View::make('link/navigation')
+			->with( 'prev', get_previous_posts_link() )
+			->with( 'next',  get_next_posts_link() )
+			->render();
+	}
+
+} else {
 	get_template_part( 'page-templates/partials/content', 'none' );
-endif;
+}
 
 get_footer();
 ?>
