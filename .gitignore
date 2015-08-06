@@ -9,3 +9,5 @@ assets/css/*.map
 composer.lock
 library/vendors/composer/
 
+.ruby-gemset
+.ruby-version
