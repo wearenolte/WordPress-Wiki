@@ -1,7 +1,7 @@
 <div class="link-block">
 	<div class="link">
 		<div class="link-link">
-			<a href="<?php echo $link ?>" target="_blank">
+			<a href="<?php echo $link ?>">
 				<span class="icon-link-external"></span>
 			</a>
 		</div>
@@ -9,15 +9,15 @@
 		<div class="link-inner">
 			<div class="link-top">
 				<?php if( $img ): ?>
-				<a href="<?php echo $link ?>" target="_blank">
+				<a href="<?php echo $link ?>">
 					<img src="<?php echo $img; ?>" alt="<?php echo $title; ?>">
 				</a>
 				<?php endif; ?>
 				<div class="link-main">
-					<a href="<?php echo $link ?>" target="_blank">
+					<a href="<?php echo $link ?>">
 						<h2 class="link-title"><?php echo $title ?></h2>
 					</a>
-					<a href="<?php echo $link; ?>" target="_blank">
+					<a href="<?php echo $link; ?>">
 						<h6 class="link-address"><?php echo $link ?></h6>
 					</a>
 					<?php if( ! empty( $categories ) ): ?>
