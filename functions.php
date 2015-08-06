@@ -241,9 +241,8 @@ if ( ! function_exists( 'moxie_wiki_add_breadcrumbs' ) ) :
 add_action( 'tha_content_top', 'moxie_wiki_add_breadcrumbs' );
 endif;
 
-//Add Field for logo
 function themeslug_theme_customizer( $wp_customize ) {
-	// Fun code will go here
+	//Add Field for logo
 	$wp_customize->add_section( 'themeslug_logo_section' , array(
 		'title'       => __( 'Logo', 'themeslug' ),
 		'priority'    => 30,
@@ -257,6 +256,35 @@ function themeslug_theme_customizer( $wp_customize ) {
 		'section'  => 'themeslug_logo_section',
 		'settings' => 'themeslug_logo',
 	) ) );
+
+
+	//Add Field for Social Links
+
+	$wp_customize->add_section( 'themeslug_social_section' , array(
+		'title'       => __( 'Social Links', 'themeslug' ),
+		'priority'    => 30,
+		'description' => 'Show or Hide Social Links',
+	) );
+
+	//Twitter Link
+	$wp_customize->add_setting( 'themeslug_social_twitter' );
+
+	$wp_customize->add_control( 'themeslug_social_twitter', array(
+		'section'	=> 'themeslug_social_section',
+		'label'		=> 'Twitter',
+		'type'		=> 'text',
+	) );
+
+
+	//Facebook Link
+	$wp_customize->add_setting( 'themeslug_social_facebook' );
+
+	$wp_customize->add_control( 'themeslug_social_facebook', array(
+		'section'	=> 'themeslug_social_section',
+		'label'		=> 'Facebook',
+		'type'		=> 'text',
+
+	) );
 }
 add_action( 'customize_register', 'themeslug_theme_customizer' );
 
