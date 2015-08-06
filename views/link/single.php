@@ -8,7 +8,7 @@
 		<div class="link-color" style="background:#F08484"></div>
 		<div class="link-inner">
 			<div class="link-top">
-				<?php if( $img ): ?>
+				<?php if( isset($img) ): ?>
 				<a href="<?php echo $link ?>">
 					<img src="<?php echo $img; ?>" alt="<?php echo $title; ?>">
 				</a>
@@ -33,7 +33,9 @@
 					<?php endif; ?>
 				</div>
 			</div>
+			<?php if( isset( $description ) ): ?>
 			<p class="link-description"><?php echo $description ?></p>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>
