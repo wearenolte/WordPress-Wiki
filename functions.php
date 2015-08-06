@@ -85,6 +85,7 @@ if ( ! function_exists( 'moxie_wiki_setup' ) ) :
 		 * Including Theme Hook Alliance (https://github.com/zamoose/themehookalliance).
 		 */
 		include 'library/vendors/theme-hook-alliance/tha-theme-hooks.php' ;
+		include 'library/vendors/composer/erusev/parsedown/Parsedown.php' ;
 
 		/**
 		 * Define a constant to storage the name of the custom post type that
