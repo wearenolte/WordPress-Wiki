@@ -1,5 +1,5 @@
 <div class="search-container" data-behavior="search-toggle">
-	<form class="searchbox" action="<?php echo $action; ?>">
+	<form class="<?php echo $classes; ?>" action="<?php echo $action; ?>">
 		<input	type="text" name="s" id="s" onkeyup="buttonUp()"
 				placeholder="<?php echo $placeholder; ?>" class="searchbox-input"
 				value="<?php echo $value; ?>">
