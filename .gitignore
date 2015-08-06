@@ -6,7 +6,6 @@ assets/bower_components
 assets/js/*.js
 assets/css/*.css
 assets/css/*.map
-composer.phar
 composer.lock
 library/vendors/composer/
 
