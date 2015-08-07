@@ -184,6 +184,11 @@
 
 			&:nth-child(1){
 				@include media($mobile){
+					display: none;
+				}
+			}
+			&:nth-child(2){
+				@include media($mobile){
 					display: block;
 				}
 			}
