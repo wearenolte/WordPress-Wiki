@@ -8,8 +8,9 @@
  */
 ?>
 <?php use \glue\View; ?>
+	</div>
+</div>
 		<?php tha_content_bottom(); ?>
-		</main><!-- #main -->
 		<?php tha_content_after(); ?>
 		<?php tha_footer_before(); ?>
 		<?php tha_footer_top(); ?>
