@@ -102,6 +102,7 @@
 		padding: 3%;
 		@include media($mobile){
 			padding: 5px;
+			padding-left: 20px;
 		}
 	}
 
@@ -136,6 +137,10 @@
 		@include fontSize(16px);
 		margin-bottom: 2px;
 		padding-right: 35px;
+
+		@include media($mobile){
+			@include fontSize(14px);
+		}
 	}
 	.link-address{
 		@include fontSize(13px);
@@ -173,9 +178,13 @@
 			vertical-align: middle;
 			margin: 0 2px 0 0;
 
+			@include media($mobile){
+				display: none;
+			}
+
 			&:nth-child(1){
 				@include media($mobile){
-					display: none;
+					display: block;
 				}
 			}
 		}
