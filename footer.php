@@ -43,7 +43,7 @@
 		<?php
 		if( glue_view_exist() ){
 			View::make('shared/footer')
-			  ->with('foot_description', 'Wiki is a curated list of tools and resources for people who make websites.')
+			  ->with('foot_description', get_theme_mod( 'moxie_wiki_footer_colophon' ))
 			  ->with('nav_footer', $nav_footer)
 			  ->render();
 		}
