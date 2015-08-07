@@ -11,7 +11,7 @@ get_header();
 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 $args = array(
 	'post_type' => LINKS_POST_TYPE,
-	'post_status' => 'published',
+	'post_status' => 'publish',
 	'paged' => $paged
 );
 $links = new WP_Query( $args );
