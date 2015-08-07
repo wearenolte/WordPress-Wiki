@@ -1,0 +1,77 @@
+.single-link{
+  height: initial;
+}
+
+.link-content{
+  padding: 20px 30px;
+  font-family: $lato;
+  font-weight: 400;
+
+  h1, h2, h3, h4{
+    margin: 0;
+    margin-bottom: 15px;
+    font-family: $lato;
+    font-weight: 700;
+  }
+  h1{
+    @include fontSize(50px);
+  }
+  h2{
+    @include fontSize(35px);
+  }
+  h4{
+    @include fontSize(25px);
+  }
+  h5{
+    @include fontSize(22px);
+  }
+  h6{
+    @include fontSize(18px);
+  }
+
+  %code-container{
+    background-color: #F0F0F0;
+    @include fontSize(13px);
+    color: #000;
+  }
+
+  pre{
+    @extend %code-container;
+    padding: 13px;
+
+    >code{
+      padding: 0;
+      background: transparent;
+    }
+  }
+
+  code{
+    @extend %code-container;
+    padding: 2px 5px;
+  }
+
+  ol > li{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  ul > li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  a{
+    color: $primary-color;
+    &:hover{
+      text-decoration: underline;
+    }
+    &:visited{
+      color: #628BAC;
+    }
+  }
+
+  img{
+    height: auto;
+    width: auto;
+  }
+}
