@@ -17,9 +17,6 @@
 					<a href="<?php echo $link ?>">
 						<h2 class="link-title"><?php echo $title ?></h2>
 					</a>
-<!-- 					<a href="<?php echo $link; ?>">
-						<h6 class="link-address"><?php echo $link ?></h6>
-					</a> -->
 					<?php if( ! empty( $categories ) ): ?>
 					<div class="link-tags">
 						<ul>
