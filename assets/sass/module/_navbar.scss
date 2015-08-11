@@ -85,6 +85,9 @@
 	.item-accordion{
 		-webkit-transition: .2s all linear;
 		transition: .2s all linear
+		a:visited:hover, a:hover{
+			color: inherit;
+		}
 	}
 	// .is-active{
 	// 	background-color: $primary-color;
