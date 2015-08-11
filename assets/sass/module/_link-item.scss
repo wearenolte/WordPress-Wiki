@@ -61,6 +61,12 @@
 		height: 60px;
 	}
 
+	&.single-link{
+		@include media($mobile){
+			height: auto;
+		}
+	}
+
 	.link-link{
 		position: absolute;
 		top: 40px;
