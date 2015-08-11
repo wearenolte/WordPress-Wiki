@@ -35,12 +35,12 @@
 
 		<?php endforeach; ?>
 
-		<li data-behavior="modal-open">
+<!-- 		<li data-behavior="modal-open">
 			<h3 class="js-open-modal">
 				Show All
 				<span class="link-icon icon-gallery"></span>
 			</h3>
-		</li>
+		</li> -->
 	</ul>
 </nav>
 <?php endif; ?>
