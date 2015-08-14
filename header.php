@@ -45,5 +45,10 @@
 				->with( 'twitter_link',  get_theme_mod( 'themeslug_social_twitter' ) )
 				->with( 'facebook_link',  get_theme_mod( 'themeslug_social_facebook' ) )
 				->render();
+
+			$categories = get_formated_taxonomies();
+			$modal = View::make( 'shared/modal' )
+				->with( 'categories', $categories )
+				->render();
 		}
 		?>
