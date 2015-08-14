@@ -171,7 +171,11 @@ a.popup{
 	margin: 0;
 
 	&.searchbox-open{
-		width: 60vw;
+		width: 30vw;
+
+		@include media($mobile){
+			width: 60vw;
+		}
 	}
 
 	input{
