@@ -13,7 +13,10 @@
 		<?php $search_form; ?>
 	<?php endif; ?>
 
-	<div class="menu-mobile button-default" data-behavior="modal-open"><span class="js-open-modal icon-menu"></span></div>
+	<div class="menu-mobile button-default" data-behavior="modal-open">
+		<span class="js-open-modal icon-menu"></span>
+	</div>
+
 	<div class="sharing">
 		<ul class="social-sharing">
 			<?php if ( $twitter_link) : ?>
